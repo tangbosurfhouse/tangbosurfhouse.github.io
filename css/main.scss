@@ -832,7 +832,6 @@ $baseurl: '{{ site.baseurl }}/images';
 		letter-spacing: _size(letter-spacing-alt);
 		line-height: 3.125em;
 		padding: 0 2.75em;
-		margin: 40px 0;
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -856,7 +855,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
 		&.fit {
 			display: block;
-			margin: 0 0 (_size(element-margin) * 0.5) 0;
+			margin: 40px 0;
 			width: 100%;
 		}
 
