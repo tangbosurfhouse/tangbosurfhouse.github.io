@@ -31,31 +31,31 @@ layout: landing
 				<!-- Two -->
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
-							<div class="image"><img src="images/tangbo-dorm.jpg" alt="dorm" /></div><div class="content">
+							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
 								<h2>Modern Accommodations</h2>
 								<p>Dormitory or Private Rooms with wifi, AC, and hot showers</p>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/acai-bowl.png" alt="acai" /></div><div class="content">
+							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
 								<h2>Delicious Food</h2>
 								<p>We offer fresh juice, smoothies and rich coffee at our on-site cafe</p>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/aframe.jpg" alt="wave" /></div><div class="content">
+							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
 								<h2>Surf Lessons</h2>
 								<p>Local, ISA-certified, and SISA-certified surf instructors</p>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/scooter.jpg" alt="scooter" /></div><div class="content">
+							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
 								<h2>Airport Pickup and Transfer</h2>
 								<p>We can take you to/from the airport</p>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/surfboards.png" alt="surfboards" /></div><div class="content">
+							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
 								<h2>Equipment Rental</h2>
 								<p>We rent out surfboards and scooters so you can explore the island on your own</p>
 							</div>
@@ -80,17 +80,43 @@ layout: landing
 									<label for="check-in">Check-In Date:</label>
 									<input type="date" id="check-in" name="check-in" placeholder="Check-in Date" required>
 
-									<label for="check-in">Check-Out Date:</label>
+									<label for="check-out">Check-Out Date:</label>
 									<input type="date" id="check-out" name="check-out" placeholder="Check-out Date" required>
 
 									<label for="body-count">Number of Guests:</label>
 									<input type="number" id="body-count" name="body-count" min="1" max="10" required>
+
+									<label for="package-type">Package Type:</label>
+									<select id="package-type" name="package-type" placeholder="Bed and Breakfast" required>
+										<option value="bed-only">Lodging Only</option>
+										<option value="bed-breakfast">Bed and Breakfast</option>
+										<option value="bed-breakfast-scooter">Lodging, Breakfast, Scooter Rental</option>
+										<option value="bed-breakfast-scooter-surfboard">Lodging, Breakfast, Scooter Rental, Surfboard Rental</option>
+										<option value="whole-shebang">The Whole Shebang (Lodging, Breakfast, Scooter Rental, Surfboard + Lessons/Guiding)</option>
+										<option value="girls-surf-retreat">1-Week Girls Trip</option>
+									</select>
+
+									<label for="girls-trip">If you're signing up for a Girls Trip, which week do you want?</label>
+									<select id="girls-trip" name="girls-trip" placeholder="Girls Trip" required>
+										<option value="nov-2025">Nov 23-30, 2025</option>
+										<option value="dec-2025">Dec 7-14, 2025</option>
+										<option value="jan-2026">Jan 11-18, 2026</option>
+										<option value="feb-2026">Feb 8-15, 2026</option>
+										<option value="mar-2026">Mar 15-22, 2026</option>
+										<option value="apr-2026">Apr 5-12, 2026</option>
+									</select>
 
 									<label for="room-type">Room Type:</label>
 									<select id="room-type" name="room-type" placeholder="Room Type" required>
 										<option value="dorm">Dormitory</option>
 										<option value="private">Private Room</option>
 									</select>
+
+									<label for="scooters">How Many Scooters Do You Want To Rent?</label>
+									<input type="number" id="scooters" name="scooters" min="0" max="10" required>
+
+									<label for="surfboards">How Many Surfboards Do You Want To Rent?</label>
+									<input type="number" id="surfboards" name="surfboards" min="0" max="10" required>
 
 									<label for="surf-level">Surf Level:</label>
 									<select id="surf-level" name="surf-level" placeholder="Surf Level" required>
