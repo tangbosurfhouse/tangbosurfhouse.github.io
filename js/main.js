@@ -62,6 +62,63 @@
 					offset: $header.outerHeight()
 				});
 
+		// Crew member carousel (photo + name + role swap together).
+			$('.crew-spotlight').each(function() {
+				var $spotlight = $(this),
+					$img = $spotlight.find('.crew-photo-frame img'),
+					$name = $spotlight.find('.crew-name'),
+					$role = $spotlight.find('.crew-role'),
+					$dots = $spotlight.find('.crew-dots'),
+					team = [];
+
+				try {
+					team = JSON.parse($spotlight.attr('data-team') || '[]');
+				} catch (e) {
+					team = [];
+				}
+
+				var index = 0;
+
+				function render() {
+					var member = team[index];
+					if (!member) return;
+					$img.attr('src', member.image).attr('alt', member.name || '');
+					$name.text(member.name || '');
+					$role.text(member.role || '');
+					$dots.find('span').removeClass('active').eq(index).addClass('active');
+				}
+
+				if (team.length === 0) return;
+
+				if (team.length <= 1) {
+					$spotlight.find('.crew-nav').hide();
+				} else {
+					team.forEach(function(_, i) {
+						$('<span></span>')
+							.toggleClass('active', i === 0)
+							.on('click', function() {
+								index = i;
+								render();
+							})
+							.appendTo($dots);
+					});
+
+					$spotlight.find('.crew-nav.prev').on('click', function(event) {
+						event.preventDefault();
+						index = (index - 1 + team.length) % team.length;
+						render();
+					});
+
+					$spotlight.find('.crew-nav.next').on('click', function(event) {
+						event.preventDefault();
+						index = (index + 1) % team.length;
+						render();
+					});
+				}
+
+				render();
+			});
+
 		// Menu.
 			$('#menu')
 				.append('<a href="#menu" class="close"></a>')
@@ -93,6 +150,45 @@
 					leave:		function() { $header.removeClass('alt'); }
 				});
 
+			}
+
+		// Video Banner Controls
+			var $bgVideo = $('#bg-video');
+			if ($bgVideo.length > 0) {
+				var videoElem = $bgVideo[0];
+				
+				$('#play-pause-btn').on('click', function(e) {
+					e.preventDefault();
+					if (videoElem.paused) {
+						videoElem.play();
+						$(this).html('<i class="fa fa-pause"></i>');
+					} else {
+						videoElem.pause();
+						$(this).html('<i class="fa fa-play"></i>');
+					}
+				});
+
+				$('#mute-unmute-btn').on('click', function(e) {
+					e.preventDefault();
+					if (videoElem.muted) {
+						videoElem.muted = false;
+						$(this).html('<i class="fa fa-volume-up"></i>');
+					} else {
+						videoElem.muted = true;
+						$(this).html('<i class="fa fa-volume-off"></i>');
+					}
+				});
+				
+				$('#watch-story-btn').on('click', function(e) {
+					e.preventDefault();
+					videoElem.currentTime = 0;
+					videoElem.muted = false;
+					$('#mute-unmute-btn').html('<i class="fa fa-volume-up"></i>');
+					if (videoElem.paused) {
+						videoElem.play();
+						$('#play-pause-btn').html('<i class="fa fa-pause"></i>');
+					}
+				});
 			}
 
 	});

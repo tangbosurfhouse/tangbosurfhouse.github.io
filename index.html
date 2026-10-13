@@ -2,50 +2,48 @@
 layout: landing
 ---
 				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<h2>{{ site.title }}</h2>
-							<p>{{ site.description | markdownify }}</p>
-							<ul class="actions">
-								<li><a href="#contact" class="button special">Book With Us</a></li>
-							</ul>
-						</div>
-						<a href="#one" class="more scrolly">Learn More</a>
-					</section>
+					<section id="banner" class="video-banner">
+  <video autoplay loop muted playsinline id="bg-video">
+    <source src="Video/tangbosurfhouse.mp4" type="video/mp4">
+  </video>
+  <div class="inner">
+    <h2>Northern Siargao. Warm water, empty lineups, island time.</h2>
+    <p>This is what a Siargao surf trip feels like — and Tangbo Surf House is your home base for it.</p>
+    <ul class="actions">
+      <li><a href="accommodation.html" class="button special">See Rooms</a></li>
+      <li><a href="#" id="watch-story-btn" style="display:inline-flex; align-items:center; color:#fff; text-decoration:none; text-transform:uppercase; font-size:0.8em; font-weight:600; letter-spacing:0.2em; border:none; margin-left: 1em;"><i class="fa fa-play-circle-o" style="font-size:1.8em; margin-right:8px; font-weight:normal;"></i> Watch Our Story</a></li>
+    </ul>
+  </div>
+  <a href="#one" class="more scrolly">Learn More</a>
+  
+  <div class="video-controls">
+    <button id="play-pause-btn" class="ctrl-btn"><i class="fa fa-pause"></i></button>
+    <button id="mute-unmute-btn" class="ctrl-btn"><i class="fa fa-volume-off"></i></button>
+  </div>
+</section>
 
 				<!-- One -->
 					<section id="one" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>We are a surf camp</h2>
-								<p>Offering tailored surf lessons, yoga, accommodations, and healthy food in the pristine tropical paradise of northern Siargao</p>
-							</header>
-							<ul class="icons major">
-								<li><span class="icon fa-diamond major style1"><span class="label">Lorem</span></span></li>
-								<li><span class="icon fa-heart-o major style2"><span class="label">Ipsum</span></span></li>
-								<li><span class="icon fa-code major style3"><span class="label">Dolor</span></span></li>
-							</ul>
-						</div>
-					</section>
+  <div class="inner">
+    <header class="major">
+      <h2>Explore Tangbo</h2>
+      <p>Everything you need to plan your stay</p>
+    </header>
+    <ul class="actions">
+      <li><a href="about.html" class="button">About Us</a></li>
+      <li><a href="location.html" class="button">Location</a></li>
+      <li><a href="accommodation.html" class="button">Accommodation</a></li>
+      <li><a href="surf-packages.html" class="button">Surf Packages</a></li>
+    </ul>
+  </div>
+</section>
 
 				<!-- Two -->
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
-							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
-								<h2>Modern Accommodations</h2>
-								<p>Dormitory or Private Rooms with wifi, AC, and hot showers</p>
-							</div>
-						</section>
-						<section class="spotlight">
 							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
 								<h2>Delicious Food</h2>
 								<p>We offer fresh juice, smoothies and rich coffee at our on-site cafe</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-								<h2>Surf Lessons</h2>
-								<p>Local, ISA-certified, and SISA-certified surf instructors</p>
 							</div>
 						</section>
 						<section class="spotlight">
@@ -56,117 +54,9 @@ layout: landing
 						</section>
 						<section class="spotlight">
 							<div class="image"><img src="images/pic05.jpg" alt="" /></div><div class="content">
-								<h2>Equipment Rental</h2>
-								<p>We rent out surfboards and scooters so you can explore the island on your own</p>
+								<h2>Bike Rental</h2>
+								<p>We rent out bikes so you can explore the island on your own</p>
 							</div>
 						</section>
 					</section>
 				
-				<!-- Three -->
-					<section id="one" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Menu and Packages</h2>
-								<p>Check out our cafe menu, weekly packages, and the 1-week surf trip package</p>
-							</header>
-							<ul class="actions">
-								<li>
-									<a href="/files/cafe-menu.pdf" class="button icon fa-download">
-										<font dir="auto" style="vertical-align: inherit;">
-											Download Cafe Menu
-										</font>
-									</a>
-								</li>
-								<li>
-									<a href="/files/weekly-packages.pdf" class="button icon fa-download">
-										<font dir="auto" style="vertical-align: inherit;">
-											Download Weekly Packages Info
-										</font>
-									</a>
-								</li>
-								<li>
-									<a href="/files/surf-trip.pdf" class="button icon fa-download">
-										<font dir="auto" style="vertical-align: inherit;">
-											Download 1-Week Surf Trip Info
-										</font>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- CTA -->
-					<section id="contact" class="wrapper style4">
-						<div class="inner">
-							<header>
-								<h2>Booking Form</h2>
-								<p>Send us your reservation request details</p>
-							</header>
-							<ul class="actions vertical">
-								<form accept-charset="UTF-8" action="https://formeezy.com/api/v1/forms/689c1d7692714f000285b8ff/submissions" method="POST" enctype="multipart/form-data">
-									<label for="name">Name:</label>
-									<input type="text" id="name" name="name" required>
-
-									<label for="email">Email:</label>
-									<input type="email" id="email" name="email" required>
-
-									<label for="check-in">Check-In Date:</label>
-									<input type="date" id="check-in" name="check-in" placeholder="Check-in Date" required>
-
-									<label for="check-out">Check-Out Date:</label>
-									<input type="date" id="check-out" name="check-out" placeholder="Check-out Date" required>
-
-									<label for="body-count">Number of Guests:</label>
-									<input type="number" id="body-count" name="body-count" min="1" max="10" required>
-
-									<label for="package-type">Package Type:</label>
-									<select id="package-type" name="package-type" placeholder="Bed and Breakfast" required>
-										<option value="bed-only">Lodging Only</option>
-										<option value="bed-breakfast">Bed and Breakfast</option>
-										<option value="bed-breakfast-scooter">Lodging, Breakfast, Scooter Rental</option>
-										<option value="bed-breakfast-scooter-surfboard">Lodging, Breakfast, Scooter Rental, Surfboard Rental</option>
-										<option value="whole-shebang">The Whole Shebang (Lodging, Breakfast, Scooter Rental, Surfboard + Lessons/Guiding)</option>
-										<option value="surf-retreat">1-Week Surf Trip</option>
-									</select>
-
-									<label for="surf-trip">If you're signing up for a 1-week Surf Trip, which week do you want?</label>
-									<select id="surf-trip" name="surf-trip" placeholder="N/A" required>
-										<option value="N/A">None</option>
-										<option value="nov-2025">Nov 23-30, 2025</option>
-										<option value="dec-2025">Dec 7-14, 2025</option>
-										<option value="jan-2026">Jan 11-18, 2026</option>
-										<option value="feb-2026">Feb 8-15, 2026</option>
-										<option value="mar-2026">Mar 15-22, 2026</option>
-										<option value="apr-2026">Apr 5-12, 2026</option>
-									</select>
-
-									<label for="room-type">Room Type:</label>
-									<select id="room-type" name="room-type" placeholder="Room Type" required>
-										<option value="dorm">Dormitory</option>
-										<option value="private">Private Room</option>
-									</select>
-
-									<label for="scooters">How Many Scooters Do You Want To Rent?</label>
-									<input type="number" id="scooters" name="scooters" min="0" max="10" required>
-
-									<label for="surfboards">How Many Surfboards Do You Want To Rent?</label>
-									<input type="number" id="surfboards" name="surfboards" min="0" max="10" required>
-
-									<label for="surf-level">Surf Level:</label>
-									<select id="surf-level" name="surf-level" placeholder="Surf Level" required>
-										<option value="beginner">Beginner</option>
-										<option value="intermediate">Intermediate</option>
-										<option value="advanced">Advanced</option>
-										<option value="none">I don't intend to surf</option>
-									</select>
-
-									<label for="message">Dietary Requirements or Allergies:</label>
-									<textarea id="message" name="message" required></textarea>
-
-									<input name="bot-field" type="text" style="display: none;">
-
-									<button type="submit" class="button fit special">Book Now</button>
-								</form>
-							</ul>
-						</div>
-					</section>

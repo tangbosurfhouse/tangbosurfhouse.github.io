@@ -1,0 +1,96 @@
+#main .box {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#main .box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+#main .box h3 {
+  margin-top: 1em;
+  color: #1b3a4b;
+}
+
+#main .box .actions .button {
+  width: 100%;
+  text-align: center;
+}
+
+.wrapper.style2 h4 {
+  position: relative;
+  padding-left: 1.8em;
+  color: #1b3a4b;
+}
+
+.wrapper.style2 h4::before {
+  content: "\f00c";
+  font-family: "FontAwesome";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  color: #2a9df4;
+}
+
+.wrapper.style2 .row > div {
+  margin-bottom: 2em;
+}
+
+#booking {
+  background: linear-gradient(135deg, #0f2b3d, #1b4b63);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+}
+
+#booking h3,
+#booking p {
+  color: #fff;
+}
+
+#booking .actions {
+  justify-content: center;
+}
+
+#booking .button {
+  color: #ffffff !important;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+#booking .button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 0 0 2px #ffffff;
+  color: #ffffff !important;
+}
+
+#booking .button:active {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff !important;
+}
+
+#booking .button.primary {
+  background: #2a9df4;
+  border-color: #2a9df4;
+  box-shadow: none;
+  color: #ffffff !important;
+}
+
+#booking .button.primary:hover {
+  background: #1b7fcc;
+  border-color: #1b7fcc;
+  color: #ffffff !important;
+}
+
+@media screen and (max-width: 736px) {
+  #main .box {
+    margin-bottom: 2em;
+  }
+
+  #booking {
+    padding: 2em 1em;
+  }
+}
