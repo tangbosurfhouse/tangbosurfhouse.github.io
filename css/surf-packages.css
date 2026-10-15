@@ -177,19 +177,33 @@
   gap: 0.5rem;
 }
 
-.currency-btn {
+button.currency-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  min-height: 0;
+  padding: 0.55rem 0.95rem;
   background: #f1f5f9;
   border: 1px solid #cbd5e1;
   color: #1e293b !important;
-  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
   font-size: 0.85rem;
   font-weight: 700;
-  border-radius: var(--radius-sm);
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: center;
+  white-space: nowrap;
+  overflow: visible;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.currency-btn.active, .currency-btn:hover {
+button.currency-btn.active,
+button.currency-btn:hover {
   background: var(--ocean-blue) !important;
   color: #ffffff !important;
   border-color: var(--ocean-blue) !important;
