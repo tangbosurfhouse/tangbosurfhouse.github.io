@@ -23,14 +23,19 @@
 			$banner = $('#banner'),
 			$header = $('#header');
 
-		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
+		// Set to true to restore the homepage's blue loading intro.
+			var enableHomepageLoadingEffect = false;
 
-			$window.on('load', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-loading');
-				}, 100);
-			});
+		// Keep the existing loading behavior on other pages.
+			if (enableHomepageLoadingEffect || !$body.hasClass('landing')) {
+				$body.addClass('is-loading');
+
+				$window.on('load', function() {
+					window.setTimeout(function() {
+						$body.removeClass('is-loading');
+					}, 100);
+				});
+			}
 
 		// Mobile?
 			if (skel.vars.mobile)
