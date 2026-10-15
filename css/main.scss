@@ -2739,3 +2739,436 @@ $baseurl: '{{ site.baseurl }}/images';
     }
   }
 }
+
+/* Homepage sections below the video. Scoped so shared #one/#two rules stay intact on other pages. */
+body.landing #one.home-explore,
+body.landing #two.home-services {
+  --home-bg: #F6F1E7;
+  --home-card: #EFE6D4;
+  --home-deep: #173F42;
+  --home-teal: #226773;
+  --home-line: #DED7CA;
+  --home-ink: #24484c;
+  --home-serif: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --home-sans: "Open Sans", Helvetica, sans-serif;
+  margin: 0;
+  background-color: var(--home-bg);
+  color: var(--home-deep);
+  font-family: var(--home-sans);
+  letter-spacing: 0;
+  text-align: left;
+}
+
+body.landing #two.home-services {
+  background-color: var(--home-bg) !important;
+  color: var(--home-deep) !important;
+}
+
+body.landing #one.home-explore {
+  scroll-margin-top: 4.5em;
+  padding: 3.25rem 0 0.5rem;
+}
+
+body.landing #two.home-services {
+  padding: 1.75rem 0 3.5rem;
+}
+
+body.landing .home-explore-inner,
+body.landing .home-services-inner {
+  width: min(72rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+body.landing .home-explore p,
+body.landing .home-services p,
+body.landing .home-explore h2,
+body.landing .home-explore h3,
+body.landing .home-services h2,
+body.landing .home-services h3 {
+  letter-spacing: 0;
+  text-transform: none;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+body.landing .home-explore p,
+body.landing .home-services p {
+  margin: 0;
+}
+
+body.landing .home-explore h2,
+body.landing .home-explore h3,
+body.landing .home-services h2,
+body.landing .home-services h3 {
+  margin: 0;
+  color: var(--home-deep);
+  font-family: var(--home-serif);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+body.landing .home-explore-intro {
+  max-width: 40rem;
+  margin: 0 auto 1.6rem;
+  text-align: center;
+}
+
+body.landing .home-explore-eyebrow,
+body.landing .home-service-eyebrow {
+  color: var(--home-teal);
+  font-family: var(--home-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+body.landing .home-explore-eyebrow {
+  margin-bottom: 0.7rem;
+}
+
+body.landing .home-explore-title {
+  margin-bottom: 0.55rem;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height: 1.12;
+}
+
+body.landing .home-explore-lead {
+  color: var(--home-ink);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  text-wrap: balance;
+}
+
+body.landing .home-explore-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+body.landing .home-explore-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+  padding: 1rem 1rem 1.05rem;
+  border: 1px solid var(--home-line);
+  border-radius: 0.9rem;
+  background: var(--home-card);
+  box-shadow: 0 1px 2px rgba(23, 63, 66, 0.04);
+  color: var(--home-deep);
+  text-align: left;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+body.landing .home-explore-tile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+body.landing .home-explore-tile-icon,
+body.landing .home-explore-tile-arrow {
+  display: block;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  color: var(--home-teal);
+}
+
+body.landing .home-explore-tile-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+body.landing .home-explore-tile-arrow {
+  width: 1.15rem;
+  height: 1.15rem;
+  transition: transform 0.2s ease;
+}
+
+body.landing .home-explore-tile-title {
+  min-width: 0;
+  font-family: var(--home-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  hyphens: none;
+}
+
+body.landing .home-explore-tile-label {
+  min-width: 0;
+  margin-top: 0.2rem;
+  color: var(--home-ink);
+  font-size: 0.975rem;
+  line-height: 1.4;
+}
+
+body.landing .home-explore-tile:hover {
+  border-color: var(--home-teal);
+  background: #fbf7ef;
+}
+
+body.landing .home-explore-tile:hover .home-explore-tile-arrow,
+body.landing .home-explore-tile:focus-visible .home-explore-tile-arrow {
+  transform: translateX(3px);
+}
+
+body.landing a.home-explore-tile:focus,
+body.landing a.home-explore-tile:focus-visible {
+  outline: 2px solid #226773;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--home-bg), 0 0 0 4px #226773;
+}
+
+body.landing .home-services-title {
+  margin-bottom: 1.15rem;
+  font-size: clamp(1.85rem, 3.4vw, 2.7rem);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+body.landing .home-services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+body.landing .home-service-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--home-line);
+  border-radius: 1rem;
+  background: var(--home-card);
+  box-shadow: 0 1px 2px rgba(23, 63, 66, 0.04);
+}
+
+body.landing .home-service-media {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  background: #e7decc;
+}
+
+body.landing .home-service-card-feature .home-service-media {
+  aspect-ratio: 3 / 4;
+}
+
+body.landing .home-service-card-side .home-service-media {
+  aspect-ratio: 16 / 9;
+}
+
+body.landing .home-service-media img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.landing .home-service-card-feature img {
+  object-position: center 58%;
+}
+
+body.landing .home-service-card-transfer img,
+body.landing .home-service-card-side:nth-child(2) img {
+  object-position: center center;
+}
+
+body.landing .home-service-card-side:nth-child(3) img {
+  object-position: center 68%;
+}
+
+body.landing .home-service-copy {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 1rem 1.05rem 1.15rem;
+}
+
+body.landing .home-service-eyebrow {
+  margin-bottom: 0.4rem;
+}
+
+body.landing .home-service-card h3 {
+  margin-bottom: 0.4rem;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+body.landing .home-service-copy p:last-child {
+  color: var(--home-ink);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media screen and (min-width: 360px) {
+  body.landing .home-explore-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.landing .home-explore-tile-title {
+    font-size: 1.05rem;
+  }
+}
+
+@media screen and (max-width: 429px) {
+  body.landing .home-explore-tile {
+    padding: 0.85rem 0.8rem 0.95rem;
+  }
+
+  body.landing .home-explore-tile-title {
+    font-size: 1rem;
+  }
+
+  body.landing .home-explore-tile-label {
+    font-size: 0.9375rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 959px) {
+  body.landing .home-service-card-side {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  body.landing .home-service-card-side .home-service-media {
+    flex: 0 0 44%;
+    width: 44%;
+    max-width: 16rem;
+    aspect-ratio: 16 / 9;
+    align-self: center;
+  }
+
+  body.landing .home-service-card-side .home-service-copy {
+    flex: 1 1 auto;
+    padding: 0.9rem 1rem;
+  }
+
+  body.landing .home-service-card-side h3 {
+    font-size: clamp(1.2rem, 2.4vw, 1.45rem);
+  }
+
+  body.landing .home-service-card-feature .home-service-media {
+    aspect-ratio: 3 / 2;
+    max-height: 28rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  body.landing #one.home-explore {
+    padding: 4.25rem 0 0.75rem;
+  }
+
+  body.landing #two.home-services {
+    padding: 1.5rem 0 4.5rem;
+  }
+
+  body.landing .home-explore-intro {
+    margin-bottom: 1.85rem;
+  }
+
+  body.landing .home-explore-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  body.landing .home-explore-tile-title {
+    font-size: 1.2rem;
+  }
+
+  body.landing .home-explore-lead,
+  body.landing .home-service-copy p:last-child {
+    font-size: 1.0625rem;
+  }
+
+  body.landing .home-services-title {
+    margin-bottom: 1.3rem;
+    text-wrap: balance;
+  }
+
+  body.landing .home-services-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
+    grid-template-areas:
+      "feature transfer"
+      "feature bike";
+    gap: 1.15rem;
+    align-items: stretch;
+  }
+
+  body.landing .home-service-card-feature {
+    grid-area: feature;
+    height: 100%;
+  }
+
+  body.landing .home-service-card-side:nth-child(2) {
+    grid-area: transfer;
+  }
+
+  body.landing .home-service-card-side:nth-child(3) {
+    grid-area: bike;
+  }
+
+  body.landing .home-service-card {
+    height: 100%;
+  }
+
+  body.landing .home-services-grid > .home-service-card.home-service-card-side {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  body.landing .home-services-grid > .home-service-card .home-service-media {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: none;
+    align-self: stretch;
+    min-height: 0;
+  }
+
+  body.landing .home-services-grid > .home-service-card.home-service-card-feature .home-service-media {
+    aspect-ratio: auto;
+    min-height: 16rem;
+  }
+
+  body.landing .home-services-grid > .home-service-card.home-service-card-side .home-service-media {
+    aspect-ratio: 16 / 9;
+    min-height: 8.5rem;
+  }
+
+  body.landing .home-service-card-side .home-service-copy {
+    padding: 1.05rem 1.15rem 1.2rem;
+  }
+
+  body.landing .home-service-card-side h3 {
+    font-size: clamp(1.3rem, 1.5vw, 1.6rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.landing .home-explore-tile,
+  body.landing .home-explore-tile-arrow {
+    transition: none;
+  }
+
+  body.landing .home-explore-tile:hover .home-explore-tile-arrow,
+  body.landing .home-explore-tile:focus-visible .home-explore-tile-arrow {
+    transform: none;
+  }
+}
