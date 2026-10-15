@@ -1,96 +1,924 @@
-#main .box {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  border-radius: 6px;
-  overflow: hidden;
+#main.accommodation-page {
+  --acc-bg: #F6F1E7;
+  --acc-card: #FFFCF6;
+  --acc-sand: #EFE6D4;
+  --acc-teal: #226773;
+  --acc-teal-dark: #1b5660;
+  --acc-deep: #173F42;
+  --acc-ink: #24484c;
+  --acc-line: #DED7CA;
+  --acc-cream: #F6F1E7;
+  --acc-navy: #003580;
+  --acc-serif: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --acc-sans: "Open Sans", Helvetica, sans-serif;
+  background: var(--acc-bg);
+  color: var(--acc-deep);
+  font-family: var(--acc-sans);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
 }
 
-#main .box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+#main.accommodation-page *,
+#main.accommodation-page *::before,
+#main.accommodation-page *::after {
+  box-sizing: border-box;
 }
 
-#main .box h3 {
-  margin-top: 1em;
-  color: #1b3a4b;
+#main.accommodation-page p,
+#main.accommodation-page h2,
+#main.accommodation-page h3 {
+  letter-spacing: 0;
+  text-transform: none;
 }
 
-#main .box .actions .button {
-  width: 100%;
-  text-align: center;
+#main.accommodation-page p {
+  margin: 0;
+  color: var(--acc-ink);
+  line-height: 1.6;
 }
 
-.wrapper.style2 h4 {
+#main.accommodation-page h2,
+#main.accommodation-page h3 {
+  font-family: var(--acc-serif);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--acc-deep);
+}
+
+#main.accommodation-page .accommodation-wrap {
+  width: min(72rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+#main.accommodation-page > header.accommodation-hero {
   position: relative;
-  padding-left: 1.8em;
-  color: #1b3a4b;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  min-height: max(24rem, calc(100svh - 4.5em));
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--acc-deep);
+  background-image: none;
+  background-attachment: scroll;
+  text-align: left;
 }
 
-.wrapper.style2 h4::before {
-  content: "\f00c";
-  font-family: "FontAwesome";
+#main.accommodation-page .accommodation-hero-photo {
   position: absolute;
-  left: 0;
-  top: 0.15em;
-  color: #2a9df4;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 18% 12%;
 }
 
-.wrapper.style2 .row > div {
-  margin-bottom: 2em;
+#main.accommodation-page .accommodation-hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(23, 63, 66, 0.08) 0%, rgba(23, 63, 66, 0.05) 36%, rgba(23, 63, 66, 0.62) 70%, rgba(23, 63, 66, 0.84) 100%);
+  pointer-events: none;
 }
 
-#booking {
-  background: linear-gradient(135deg, #0f2b3d, #1b4b63);
+#main.accommodation-page .accommodation-hero-copy {
+  position: relative;
+  z-index: 1;
+  width: min(40rem, 100%);
+  padding: 3rem max(1.25rem, env(safe-area-inset-right)) max(2rem, env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left));
+}
+
+#main.accommodation-page .accommodation-kicker,
+#main.accommodation-page .accommodation-eyebrow {
+  margin: 0 0 0.7rem;
+  color: var(--acc-teal);
+  font-family: var(--acc-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+#main.accommodation-page > header.accommodation-hero .accommodation-kicker {
   color: #fff;
+  text-shadow: 0 1px 2px rgba(23, 63, 66, 0.35);
+}
+
+#main.accommodation-page > header.accommodation-hero h2 {
+  margin: 0 0 0.55rem;
+  color: #fff;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: 0;
+  text-transform: none;
+  text-shadow: 0 1px 2px rgba(23, 63, 66, 0.35);
+}
+
+#main.accommodation-page .accommodation-hero-lead {
+  max-width: 28rem;
+  margin: 0;
+  color: #fff;
+  font-size: 1.12rem;
+  line-height: 1.5;
+  text-shadow: 0 1px 2px rgba(23, 63, 66, 0.4);
+}
+
+#main.accommodation-page .accommodation-hero-cta,
+#main.accommodation-page .accommodation-book,
+#main.accommodation-page .accommodation-contact-link {
+  font-family: var(--acc-sans);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
   text-align: center;
-  border-radius: 6px;
+  text-decoration: none;
+  text-transform: none;
+  white-space: normal;
+  cursor: pointer;
 }
 
-#booking h3,
-#booking p {
+#main.accommodation-page .accommodation-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin: 1.35rem 0 0;
+  padding: 0.8rem 1.35rem;
+  border: 0;
+  border-radius: 12px;
+  background: var(--acc-card);
+  color: var(--acc-deep);
+  box-shadow: none;
+}
+
+#main.accommodation-page .accommodation-hero-cta:hover {
+  background: #fff;
+  color: var(--acc-teal);
+}
+
+#main.accommodation-page .accommodation-hero-cta:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+#main.accommodation-page .accommodation-rooms,
+#main.accommodation-page .accommodation-amenities,
+#main.accommodation-page .accommodation-contact {
+  scroll-margin-top: 5.5rem;
+}
+
+#main.accommodation-page .accommodation-rooms {
+  padding: 4.5rem 0 4rem;
+}
+
+#main.accommodation-page .accommodation-section-head {
+  max-width: 36rem;
+  margin: 0 auto 2.25rem;
+  text-align: center;
+}
+
+#main.accommodation-page .accommodation-section-head h2,
+#main.accommodation-page .accommodation-amenities h2,
+#main.accommodation-page .accommodation-contact h2 {
+  margin: 0 0 0.7rem;
+  font-size: clamp(2rem, 4vw, 3.05rem);
+  text-wrap: balance;
+}
+
+#main.accommodation-page .accommodation-section-head p {
+  font-size: 1.05rem;
+}
+
+#main.accommodation-page .accommodation-room-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+  align-items: stretch;
+}
+
+#main.accommodation-page .accommodation-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--acc-line);
+  border-radius: 18px;
+  background: var(--acc-card);
+}
+
+#main.accommodation-page .accommodation-card-media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #e7dfd2;
+}
+
+#main.accommodation-page .accommodation-card-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#main.accommodation-page .accommodation-card-photo--dorm {
+  object-position: center 42%;
+}
+
+#main.accommodation-page .accommodation-card-photo--room1 {
+  object-position: 20% 62%;
+}
+
+#main.accommodation-page .accommodation-card-photo--room2 {
+  object-position: center 48%;
+}
+
+#main.accommodation-page .accommodation-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 1.25rem 1.25rem 1.35rem;
+}
+
+#main.accommodation-page .accommodation-card h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.65rem;
+}
+
+#main.accommodation-page .accommodation-card-text {
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+#main.accommodation-page .accommodation-card-foot {
+  margin-top: 1.15rem;
+}
+
+#main.accommodation-page .accommodation-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding-top: 0.95rem;
+  border-top: 1px solid var(--acc-line);
+}
+
+#main.accommodation-page .accommodation-price {
+  margin: 0;
+  min-width: 0;
+  color: var(--acc-deep);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#main.accommodation-page .accommodation-price-value {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+#main.accommodation-page .accommodation-price-unit {
+  color: #3e5c60;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+#main.accommodation-page .accommodation-currency {
+  appearance: auto;
+  -webkit-appearance: menulist;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 8.75rem;
+  min-width: 6.6rem;
+  height: 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 0.4rem;
+  border: 1px solid var(--acc-line);
+  border-radius: 8px;
+  background: var(--acc-card);
+  color: var(--acc-deep);
+  font-family: var(--acc-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+#main.accommodation-page .accommodation-currency:focus,
+#main.accommodation-page .accommodation-currency:focus-visible {
+  outline: 3px solid var(--acc-deep);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+#main.accommodation-page .accommodation-book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  height: auto;
+  margin: 0.9rem 0 0;
+  padding: 0.75rem 1rem;
+  overflow: visible;
+  border: 0;
+  border-radius: 12px;
+  background: var(--acc-teal);
+  box-shadow: none;
+  color: #fff;
+  font-size: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+#main.accommodation-page .accommodation-book:hover {
+  background: var(--acc-teal-dark);
   color: #fff;
 }
 
-#booking .actions {
+#main.accommodation-page .accommodation-book:active {
+  background: #143f47;
+  color: #fff;
+}
+
+#main.accommodation-page .accommodation-book:focus-visible {
+  outline: 3px solid var(--acc-deep);
+  outline-offset: 3px;
+}
+
+#main.accommodation-page .accommodation-amenities {
+  padding: 2.6rem 0;
+  border-top: 1px solid var(--acc-line);
+  border-bottom: 1px solid var(--acc-line);
+  background: var(--acc-sand);
+}
+
+#main.accommodation-page .accommodation-amenities h2 {
+  margin-bottom: 1.25rem;
+}
+
+#main.accommodation-page .accommodation-amenity-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.15rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#main.accommodation-page .accommodation-amenity {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex: 1 1 14.5rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#main.accommodation-page .accommodation-amenity-icon {
+  display: block;
+  width: 1.6rem;
+  height: 1.6rem;
+  flex: 0 0 1.6rem;
+  margin-top: 0.12rem;
+  color: var(--acc-teal);
+}
+
+#main.accommodation-page .accommodation-amenity h3 {
+  margin: 0 0 0.15rem;
+  font-family: var(--acc-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+#main.accommodation-page .accommodation-amenity p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+#main.accommodation-page .accommodation-contact {
+  padding: 4.25rem 0;
+  background: var(--acc-deep);
+  color: var(--acc-cream);
+  text-align: center;
+}
+
+#main.accommodation-page .accommodation-contact h2,
+#main.accommodation-page .accommodation-contact p {
+  color: var(--acc-cream);
+}
+
+#main.accommodation-page .accommodation-contact p {
+  max-width: 38rem;
+  margin: 0 auto 1.7rem;
+  font-size: 1.05rem;
+}
+
+#main.accommodation-page .accommodation-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 0.75rem;
 }
 
-#booking .button {
-  color: #ffffff !important;
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.7);
-  background-color: transparent;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
-}
-
-#booking .button:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  box-shadow: inset 0 0 0 2px #ffffff;
-  color: #ffffff !important;
-}
-
-#booking .button:active {
-  background-color: rgba(255, 255, 255, 0.25);
-  color: #ffffff !important;
-}
-
-#booking .button.primary {
-  background: #2a9df4;
-  border-color: #2a9df4;
+#main.accommodation-page .accommodation-contact-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 14rem;
+  max-width: 20rem;
+  min-height: 48px;
+  padding: 0.75rem 1.15rem;
+  border: 1px solid rgba(246, 241, 231, 0.72);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--acc-cream);
   box-shadow: none;
-  color: #ffffff !important;
 }
 
-#booking .button.primary:hover {
-  background: #1b7fcc;
-  border-color: #1b7fcc;
-  color: #ffffff !important;
+#main.accommodation-page .accommodation-contact-link:hover {
+  border-color: #fff;
+  background: rgba(246, 241, 231, 0.12);
+  color: #fff;
 }
 
-@media screen and (max-width: 736px) {
-  #main .box {
-    margin-bottom: 2em;
+#main.accommodation-page .accommodation-contact-link:focus-visible {
+  outline: 3px solid var(--acc-cream);
+  outline-offset: 3px;
+}
+
+@media (max-width: 980px) {
+  #main.accommodation-page .accommodation-room-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  #main.accommodation-page .accommodation-wrap {
+    width: min(72rem, calc(100% - 1.5rem));
   }
 
-  #booking {
-    padding: 2em 1em;
+  #main.accommodation-page .accommodation-room-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #main.accommodation-page .accommodation-rooms {
+    padding: 3.25rem 0 2.75rem;
+  }
+
+  #main.accommodation-page .accommodation-hero-cta,
+  #main.accommodation-page .accommodation-contact-link {
+    width: 100%;
+    max-width: none;
+    flex-basis: 100%;
+  }
+}
+
+@media (max-height: 520px) {
+  #main.accommodation-page > header.accommodation-hero {
+    min-height: 16.5rem;
+  }
+
+  #main.accommodation-page > header.accommodation-hero h2 {
+    font-size: 2.15rem;
+  }
+
+  #main.accommodation-page .accommodation-hero-copy {
+    padding-top: 1.25rem;
+    padding-bottom: 1.15rem;
+  }
+
+  #main.accommodation-page .accommodation-hero-lead {
+    font-size: 1rem;
+  }
+
+  #main.accommodation-page .accommodation-rooms,
+  #main.accommodation-page .accommodation-amenities,
+  #main.accommodation-page .accommodation-contact {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #main.accommodation-page .accommodation-hero-cta,
+  #main.accommodation-page .accommodation-book,
+  #main.accommodation-page .accommodation-contact-link {
+    transition: none;
+  }
+}
+
+dialog.accommodation-booking-dialog {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: #173F42;
+  max-width: none;
+  max-height: none;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+dialog.accommodation-booking-dialog:not([open]) {
+  display: none;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+dialog.accommodation-booking-dialog[open] {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  align-items: safe center;
+  justify-content: center;
+  justify-content: safe center;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  overscroll-behavior: none;
+  visibility: visible;
+  pointer-events: auto;
+  padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  background: transparent;
+}
+
+dialog.accommodation-booking-dialog::backdrop {
+  background: rgba(23, 31, 32, 0.62);
+}
+
+dialog.accommodation-booking-dialog[open] .accommodation-booking-panel {
+  animation: accommodation-booking-enter 180ms ease;
+}
+
+dialog.accommodation-booking-dialog[open]::backdrop {
+  animation: accommodation-booking-fade 180ms ease;
+}
+
+@keyframes accommodation-booking-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes accommodation-booking-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-panel {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  min-height: 0;
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 32px);
+  overflow: hidden;
+  background: #FFFCF6;
+  color: #173F42;
+  border: 1px solid #DED7CA;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(23, 31, 32, 0.18);
+  padding: 0;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 28px 28px 22px;
+}
+
+dialog.accommodation-booking-dialog p,
+dialog.accommodation-booking-dialog h2 {
+  margin: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #DED7CA;
+  border-radius: 12px;
+  background: #F6F1E7;
+  box-shadow: none;
+  color: #173F42;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: normal;
+  overflow: visible;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-close svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-close:hover {
+  background: #EFE6D4;
+  color: #173F42;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-close:focus-visible,
+dialog.accommodation-booking-dialog a.accommodation-booking-platform:focus-visible,
+dialog.accommodation-booking-dialog button.accommodation-booking-platform:focus-visible {
+  outline: 3px solid #173F42;
+  outline-offset: 3px;
+}
+
+dialog.accommodation-booking-dialog p.accommodation-booking-brand {
+  margin: 0 48px 8px 0;
+  color: #226773;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-title {
+  margin: 0 48px 18px 0;
+  color: #173F42;
+  font-family: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.15;
+  text-transform: none;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-room {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  margin: 0 0 18px;
+  padding: 12px;
+  border: 1px solid #DED7CA;
+  border-radius: 14px;
+  background: #F6F1E7;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-thumb {
+  display: block;
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #e7dfd2;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-room-copy {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-room-name {
+  margin: 0 0 4px;
+  color: #173F42;
+  font-family: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-room-summary,
+dialog.accommodation-booking-dialog .accommodation-booking-lead,
+dialog.accommodation-booking-dialog .accommodation-booking-note,
+dialog.accommodation-booking-dialog .accommodation-booking-platform-name,
+dialog.accommodation-booking-dialog .accommodation-booking-platform-status {
+  overflow-wrap: anywhere;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-room-summary {
+  margin: 0;
+  color: #3e5c60;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-lead {
+  margin: 0 0 12px;
+  color: #173F42;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-platforms {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-slot {
+  min-width: 0;
+}
+
+dialog.accommodation-booking-dialog a.accommodation-booking-platform,
+dialog.accommodation-booking-dialog button.accommodation-booking-platform {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 64px;
+  height: auto;
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border-bottom: 0;
+  box-shadow: none;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.3;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
+  white-space: normal;
+  overflow: visible;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-platform-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-platform-name,
+dialog.accommodation-booking-dialog .accommodation-booking-platform-status {
+  display: block;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-platform-status {
+  margin-top: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-external {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
+dialog.accommodation-booking-dialog a.accommodation-booking-platform {
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+dialog.accommodation-booking-dialog a.accommodation-booking-platform--booking,
+dialog.accommodation-booking-dialog a.accommodation-booking-platform--agoda {
+  background: #FFFCF6;
+  border: 1px solid #DED7CA;
+  color: #173F42;
+}
+
+dialog.accommodation-booking-dialog a.accommodation-booking-platform--booking:hover,
+dialog.accommodation-booking-dialog a.accommodation-booking-platform--booking:focus-visible,
+dialog.accommodation-booking-dialog a.accommodation-booking-platform--booking:active,
+dialog.accommodation-booking-dialog a.accommodation-booking-platform--agoda:hover,
+dialog.accommodation-booking-dialog a.accommodation-booking-platform--agoda:focus-visible,
+dialog.accommodation-booking-dialog a.accommodation-booking-platform--agoda:active {
+  background: #003580;
+  border-color: #003580;
+  color: #ffffff;
+}
+
+dialog.accommodation-booking-dialog button.accommodation-booking-platform--booking:disabled,
+dialog.accommodation-booking-dialog button.accommodation-booking-platform--agoda:disabled {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+dialog.accommodation-booking-dialog button.accommodation-booking-platform--booking:disabled {
+  background: #e7eef6;
+  border: 1px solid #c9d5e4;
+  color: #243044;
+}
+
+dialog.accommodation-booking-dialog button.accommodation-booking-platform--agoda:disabled {
+  background: #F6F1E7;
+  border: 1px solid #DED7CA;
+  color: #3e5c60;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-note {
+  margin: 14px 0 0;
+  color: #3e5c60;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+dialog.accommodation-booking-dialog .accommodation-booking-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  dialog.accommodation-booking-dialog .accommodation-booking-panel {
+    border-radius: 18px;
+  }
+
+  dialog.accommodation-booking-dialog .accommodation-booking-body {
+    padding: 22px 16px 16px;
+  }
+
+  dialog.accommodation-booking-dialog .accommodation-booking-title {
+    font-size: 26px;
+  }
+}
+
+@media (max-height: 520px) {
+  dialog.accommodation-booking-dialog[open] {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  dialog.accommodation-booking-dialog[open] .accommodation-booking-panel,
+  dialog.accommodation-booking-dialog[open]::backdrop {
+    animation: none;
+  }
+
+  dialog.accommodation-booking-dialog a.accommodation-booking-platform {
+    transition: none;
   }
 }

@@ -2,586 +2,199 @@
 layout: default
 title: Accommodation
 ---
-<article id="main">
+<article id="main" class="accommodation-page">
 
-  <header>
-    <h2>Accommodation</h2>
-    <p>Simple, comfortable stays right by the break in northern Siargao</p>
+  <header class="accommodation-hero">
+    <img class="accommodation-hero-photo" src="images/pic03.jpg" alt="Tangbo Surf House, Sapao, Siargao Island" width="1024" height="1536" fetchpriority="high">
+    <div class="accommodation-hero-shade" aria-hidden="true"></div>
+    <div class="accommodation-hero-copy">
+      <p class="accommodation-kicker">TANGBO SURF HOUSE · NORTHERN SIARGAO</p>
+      <h2>Accommodation</h2>
+      <p class="accommodation-hero-lead">Simple, comfortable stays right by the break.</p>
+      <a class="accommodation-hero-cta" href="#accommodation-rooms">Explore rooms</a>
+    </div>
   </header>
 
-  <section class="wrapper style5"
-    style="background-image: url('images/pic03.jpg'); background-size: cover; background-position: center; position: relative;">
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
-    <div class="inner" style="position: relative; z-index: 1;">
+  <section id="accommodation-rooms" class="accommodation-rooms">
+    <div class="accommodation-wrap">
+      <header class="accommodation-section-head">
+        <p class="accommodation-eyebrow">REST BETWEEN THE WAVES</p>
+        <h2>Find your island stay</h2>
+        <p>A shared space or a quiet room of your own.</p>
+      </header>
 
-      <p style="color: #fff; text-align: center; font-size: 1.1em; max-width: 800px; margin: 0 auto 3rem auto;">Tangbo
-        Surf House offers relaxed, no-frills accommodation just steps from the water. Whether you're here to chase
-        waves, unwind, or both, we've got a room that fits your trip.</p>
+      <div class="accommodation-room-grid">
 
-      <div class="row">
-
-        <!-- Room 1 -->
-        <div class="col-4 col-12-medium" style="display: flex; flex-direction: column;">
-          <section class="box"
-            style="flex-grow: 1; display: flex; flex-direction: column; padding: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
-            <div style="width: 100%; background: #eaeaea; border-bottom: 1px solid #eee;">
-              <img src="images/dorm.png" alt="Shared Dorm" style="width: 100%; height: auto; display: block;" />
-            </div>
-            <div style="padding: 2.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; background: #fff;">
-              <h3 style="margin-bottom: 1rem;">Shared Dorm</h3>
-              <p style="flex-grow: 1; line-height: 1.6;">Our dorm room features 6 comfortable bunk beds. It comes with a
-                separate shower and toilet facility, complete with hot water. Perfect for solo surfers looking to meet
-                fellow riders.</p>
-
-              <div style="margin: 1.5rem 0; border-top: 1px solid #eee; padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between;">
-                <div>
-                  <span id="price-dorm" style="font-size: 1.5em; font-weight: 800; color: #e44c65;">&#8369;600</span> <span style="color: #888; font-size: 0.9em;">/ night</span>
-                </div>
-                <select id="currency-dorm" style="appearance: auto; padding: 0.25rem 0.5rem; font-size: 0.85em; border-radius: 4px; border: 1px solid #ccc; background: #fff; width: auto; min-width: 80px;">
+        <article class="accommodation-card">
+          <div class="accommodation-card-media">
+            <img class="accommodation-card-photo accommodation-card-photo--dorm" src="images/dorm.png" alt="Shared Dorm" width="1536" height="1024">
+          </div>
+          <div class="accommodation-card-body">
+            <h3>Shared Dorm</h3>
+            <p class="accommodation-card-text">Six bunk beds, a separate shower and toilet, and hot water. A good fit for solo surfers.</p>
+            <div class="accommodation-card-foot">
+              <div class="accommodation-price-row">
+                <p class="accommodation-price">
+                  <span id="price-dorm" class="accommodation-price-value">&#8369;600</span>
+                  <span class="accommodation-price-unit">/ night</span>
+                </p>
+                <select id="currency-dorm" class="accommodation-currency" aria-label="Currency for Shared Dorm">
                   <option value="&#8369;600">PHP (&#8369;)</option>
                   <option value="$11">USD ($)</option>
                   <option value="&#8364;10">EUR (&#8364;)</option>
                   <option value="&#163;7">GBP (&#163;)</option>
                 </select>
               </div>
-              <script>
-                document.getElementById('currency-dorm').addEventListener('change', function() {
-                  document.getElementById('price-dorm').innerText = this.value;
-                });
-              </script>
-
-
-
-              <ul class="actions" style="margin-top: auto;">
-                <li style="width: 100%;"><button type="button" class="button fit primary accommodation-booking-trigger" data-room="shared-dorm" aria-haspopup="dialog" aria-controls="accommodation-booking-dialog" style="border-radius: 6px;">Book Now</button></li>
-              </ul>
+              <button type="button" class="accommodation-book accommodation-booking-trigger" data-room="shared-dorm" aria-haspopup="dialog" aria-controls="accommodation-booking-dialog">Book Now</button>
             </div>
-          </section>
-        </div>
+          </div>
+        </article>
 
-        <!-- Room 2 -->
-        <div class="col-4 col-12-medium" style="display: flex; flex-direction: column;">
-          <section class="box"
-            style="flex-grow: 1; display: flex; flex-direction: column; padding: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
-            <div style="width: 100%; background: #eaeaea; border-bottom: 1px solid #eee;">
-              <img src="images/room1.png" alt="Private Room 1" style="width: 100%; height: auto; display: block;" />
-            </div>
-            <div style="padding: 2.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; background: #fff;">
-              <h3 style="margin-bottom: 1rem;">Private Room 1</h3>
-              <p style="flex-grow: 1; line-height: 1.6;">A quiet and cozy private room featuring a queen-sized bed, its
-                own private bathroom, and hot water. A perfect space to rest up between your surf sessions.</p>
-
-              <div style="margin: 1.5rem 0; border-top: 1px solid #eee; padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between;">
-                <div>
-                  <span id="price-room1" style="font-size: 1.5em; font-weight: 800; color: #e44c65;">&#8369;2,500</span> <span style="color: #888; font-size: 0.9em;">/ night</span>
-                </div>
-                <select id="currency-room1" style="appearance: auto; padding: 0.25rem 0.5rem; font-size: 0.85em; border-radius: 4px; border: 1px solid #ccc; background: #fff; width: auto; min-width: 80px;">
+        <article class="accommodation-card">
+          <div class="accommodation-card-media">
+            <img class="accommodation-card-photo accommodation-card-photo--room1" src="images/room1.png" alt="Private Room 1" width="762" height="397">
+          </div>
+          <div class="accommodation-card-body">
+            <h3>Private Room 1</h3>
+            <p class="accommodation-card-text">A quiet room with a queen bed, private bathroom, and hot water. Space to rest between surf sessions.</p>
+            <div class="accommodation-card-foot">
+              <div class="accommodation-price-row">
+                <p class="accommodation-price">
+                  <span id="price-room1" class="accommodation-price-value">&#8369;2,500</span>
+                  <span class="accommodation-price-unit">/ night</span>
+                </p>
+                <select id="currency-room1" class="accommodation-currency" aria-label="Currency for Private Room 1">
                   <option value="&#8369;2,500">PHP (&#8369;)</option>
                   <option value="$45">USD ($)</option>
                   <option value="&#8364;42">EUR (&#8364;)</option>
                   <option value="&#163;35">GBP (&#163;)</option>
                 </select>
               </div>
-              <script>
-                document.getElementById('currency-room1').addEventListener('change', function() {
-                  document.getElementById('price-room1').innerText = this.value;
-                });
-              </script>
-
-
-
-              <ul class="actions" style="margin-top: auto;">
-                <li style="width: 100%;"><button type="button" class="button fit primary accommodation-booking-trigger" data-room="private-room-1" aria-haspopup="dialog" aria-controls="accommodation-booking-dialog" style="border-radius: 6px;">Book Now</button></li>
-              </ul>
+              <button type="button" class="accommodation-book accommodation-booking-trigger" data-room="private-room-1" aria-haspopup="dialog" aria-controls="accommodation-booking-dialog">Book Now</button>
             </div>
-          </section>
-        </div>
+          </div>
+        </article>
 
-        <!-- Room 3 -->
-        <div class="col-4 col-12-medium" style="display: flex; flex-direction: column;">
-          <section class="box"
-            style="flex-grow: 1; display: flex; flex-direction: column; padding: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
-            <div style="width: 100%; background: #eaeaea; border-bottom: 1px solid #eee;">
-              <img src="images/room2.png" alt="Private Room 2" style="width: 100%; height: auto; display: block;" />
-            </div>
-            <div style="padding: 2.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; background: #fff;">
-              <h3 style="margin-bottom: 1rem;">Private Room 2</h3>
-              <p style="flex-grow: 1; line-height: 1.6;">A quiet and cozy private room featuring a queen-sized bed, its
-                own private bathroom, and hot water. A perfect space to rest up between your surf sessions.</p>
-
-              <div style="margin: 1.5rem 0; border-top: 1px solid #eee; padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between;">
-                <div>
-                  <span id="price-room2" style="font-size: 1.5em; font-weight: 800; color: #e44c65;">&#8369;2,500</span> <span style="color: #888; font-size: 0.9em;">/ night</span>
-                </div>
-                <select id="currency-room2" style="appearance: auto; padding: 0.25rem 0.5rem; font-size: 0.85em; border-radius: 4px; border: 1px solid #ccc; background: #fff; width: auto; min-width: 80px;">
+        <article class="accommodation-card">
+          <div class="accommodation-card-media">
+            <img class="accommodation-card-photo accommodation-card-photo--room2" src="images/room2.png" alt="Private Room 2" width="1536" height="1024">
+          </div>
+          <div class="accommodation-card-body">
+            <h3>Private Room 2</h3>
+            <p class="accommodation-card-text">A quiet room with a queen bed, private bathroom, and hot water. Space to rest between surf sessions.</p>
+            <div class="accommodation-card-foot">
+              <div class="accommodation-price-row">
+                <p class="accommodation-price">
+                  <span id="price-room2" class="accommodation-price-value">&#8369;2,500</span>
+                  <span class="accommodation-price-unit">/ night</span>
+                </p>
+                <select id="currency-room2" class="accommodation-currency" aria-label="Currency for Private Room 2">
                   <option value="&#8369;2,500">PHP (&#8369;)</option>
                   <option value="$45">USD ($)</option>
                   <option value="&#8364;42">EUR (&#8364;)</option>
                   <option value="&#163;30">GBP (&#163;)</option>
                 </select>
               </div>
-              <script>
-                document.getElementById('currency-room2').addEventListener('change', function() {
-                  document.getElementById('price-room2').innerText = this.value;
-                });
-              </script>
-
-
-
-              <ul class="actions" style="margin-top: auto;">
-                <li style="width: 100%;"><button type="button" class="button fit primary accommodation-booking-trigger" data-room="private-room-2" aria-haspopup="dialog" aria-controls="accommodation-booking-dialog" style="border-radius: 6px;">Book Now</button></li>
-              </ul>
+              <button type="button" class="accommodation-book accommodation-booking-trigger" data-room="private-room-2" aria-haspopup="dialog" aria-controls="accommodation-booking-dialog">Book Now</button>
             </div>
-          </section>
-        </div>
+          </div>
+        </article>
 
-      </div>
-
-    </div>
-  </section>
-
-
-
-  <section class="wrapper style2">
-    <div class="inner">
-      <header class="major">
-        <h3 style="text-align: center; margin-bottom: 3rem; letter-spacing: 2px;">What's Included</h3>
-      </header>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem 2rem;">
-        <div>
-          <h4 style="margin-bottom: 0.5rem; letter-spacing: 1px;">Free Wi-Fi</h4>
-          <p style="margin: 0;">Stay connected in common areas and most rooms.</p>
-        </div>
-        <div>
-          <h4 style="margin-bottom: 0.5rem; letter-spacing: 1px;">Breakfast Available</h4>
-          <p style="margin: 0;">Simple local breakfast options served daily on request.</p>
-        </div>
-        <div>
-          <h4 style="margin-bottom: 0.5rem; letter-spacing: 1px;">Board Storage & Rentals</h4>
-          <p style="margin: 0;">Secure board racks on-site, plus board rentals for guests.</p>
-        </div>
-        <div>
-          <h4 style="margin-bottom: 0.5rem; letter-spacing: 1px;">Surf Guiding</h4>
-          <p style="margin: 0;">Local guides who know the breaks and the tides.</p>
-        </div>
-        <div>
-          <h4 style="margin-bottom: 0.5rem; letter-spacing: 1px;">Airport Transfers</h4>
-          <p style="margin: 0;">Pickup and drop-off arranged on request.</p>
-        </div>
       </div>
     </div>
   </section>
 
-  <section id="booking" class="wrapper style5">
-    <div class="inner">
-      <h3>Book Your Stay</h3>
-      <p>Rooms are limited during peak swell season, so it's best to reach out early. Book online via Agoda or message us directly to check
-        availability and rates.</p>
-      <ul class="actions">
-        <li><a href="https://www.agoda.com/accom/property?propertyId=81375700&countryId=70&finalPriceView=1&isShowMobileAppPrice=false&cid=-42&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-10-22&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=PHP&isFreeOccSearch=false&flightSearchCriteria=%5Bobject+Object%5D&los=1&searchrequestid=c71470dc-9efa-473c-9294-9c87fdba2128&ds=tyTbzZ8VTi61Q2%2BH" target="_blank" rel="noopener noreferrer" class="button primary">Book on Agoda</a></li>
-        <li><a href="mailto:tangbosurfhouse@gmail.com" class="button">Email Us</a></li>
-        <li><a href="https://www.instagram.com/tangbosurfhouse" target="_blank" rel="noopener noreferrer" class="button">Message on Instagram</a></li>
+  <script>
+    (function () {
+      function bindCurrency(selectId, priceId) {
+        var select = document.getElementById(selectId);
+        var price = document.getElementById(priceId);
+        if (!select || !price) {
+          return;
+        }
+        select.addEventListener("change", function () {
+          price.innerText = select.value;
+        });
+      }
+      bindCurrency("currency-dorm", "price-dorm");
+      bindCurrency("currency-room1", "price-room1");
+      bindCurrency("currency-room2", "price-room2");
+    })();
+  </script>
+
+  <section class="accommodation-amenities" aria-labelledby="accommodation-amenities-title">
+    <div class="accommodation-wrap">
+      <h2 id="accommodation-amenities-title">Settle into island life</h2>
+      <ul class="accommodation-amenity-list">
+        <li class="accommodation-amenity">
+          <svg class="accommodation-amenity-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4.5 11.5a10.5 10.5 0 0 1 15 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+            <path d="M7.5 14.5a6 6 0 0 1 9 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+            <circle cx="12" cy="17.5" r="1.1" fill="currentColor"></circle>
+          </svg>
+          <div>
+            <h3>Free Wi-Fi</h3>
+            <p>Stay connected in common areas and most rooms.</p>
+          </div>
+        </li>
+        <li class="accommodation-amenity">
+          <svg class="accommodation-amenity-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M5 9h9.5v4.2A3.3 3.3 0 0 1 11.2 16.5H8.3A3.3 3.3 0 0 1 5 13.2V9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+            <path d="M14.5 10h2.1a2.2 2.2 0 0 1 0 4.4H14.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+            <path d="M7 19.5h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+          </svg>
+          <div>
+            <h3>Breakfast available</h3>
+            <p>Simple local breakfast options served daily on request.</p>
+          </div>
+        </li>
+        <li class="accommodation-amenity">
+          <svg class="accommodation-amenity-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M9 3.2c2.4 1.6 3.2 6.2 3.2 8.8S11.4 19.2 9 20.8C6.6 19.2 5.8 14.6 5.8 12S6.6 4.8 9 3.2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+            <path d="M9 6.5v11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+            <path d="M15 8.5h4.2M15 12h4.2M15 15.5h4.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+          </svg>
+          <div>
+            <h3>Board storage and rentals</h3>
+            <p>Secure board racks on-site, plus board rentals for guests.</p>
+          </div>
+        </li>
+        <li class="accommodation-amenity">
+          <svg class="accommodation-amenity-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+            <path d="M14.6 9.2 13 13l-3.6 1.6L11 11l3.6-1.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+          </svg>
+          <div>
+            <h3>Surf guiding</h3>
+            <p>Local guides who know the breaks and the tides.</p>
+          </div>
+        </li>
+        <li class="accommodation-amenity">
+          <svg class="accommodation-amenity-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4 15.2V13l1.8-4.2h9.2L17 13v2.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+            <path d="M4 15.2h13.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+            <circle cx="7.2" cy="16.6" r="1.3" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+            <circle cx="14.2" cy="16.6" r="1.3" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+          </svg>
+          <div>
+            <h3>Airport transfers</h3>
+            <p>Pickup and drop-off arranged on request.</p>
+          </div>
+        </li>
       </ul>
     </div>
   </section>
 
-  <style>
-    .accommodation-booking-trigger {
-      font-family: "Open Sans", Helvetica, sans-serif;
-    }
-
-    .accommodation-booking-trigger:focus-visible {
-      outline: 3px solid #e44c65;
-      outline-offset: -4px;
-    }
-
-    dialog.accommodation-booking-dialog {
-      border: 0;
-      padding: 0;
-      margin: 0;
-      background: transparent;
-      color: #243038;
-      max-width: none;
-      max-height: none;
-    }
-
-    dialog.accommodation-booking-dialog:not([open]) {
-      display: none;
-      pointer-events: none;
-      visibility: hidden;
-    }
-
-    dialog.accommodation-booking-dialog[open] {
-      position: fixed;
-      inset: 0;
-      z-index: 100000;
-      display: flex;
-      align-items: center;
-      align-items: safe center;
-      justify-content: center;
-      justify-content: safe center;
-      box-sizing: border-box;
-      width: auto;
-      height: auto;
-      overflow: hidden;
-      overscroll-behavior: none;
-      visibility: visible;
-      pointer-events: auto;
-      padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
-      background: transparent;
-    }
-
-    dialog.accommodation-booking-dialog::backdrop {
-      background: rgba(15, 28, 40, 0.62);
-    }
-
-    dialog.accommodation-booking-dialog[open] .accommodation-booking-panel {
-      animation: accommodation-booking-enter 180ms ease;
-    }
-
-    dialog.accommodation-booking-dialog[open]::backdrop {
-      animation: accommodation-booking-fade 180ms ease;
-    }
-
-    @keyframes accommodation-booking-enter {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes accommodation-booking-fade {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .accommodation-booking-panel {
-      position: relative;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      max-width: 500px;
-      min-height: 0;
-      max-height: calc(100vh - 32px);
-      max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 32px);
-      overflow: hidden;
-      background: #ffffff;
-      color: #243038;
-      border-radius: 20px;
-      box-shadow: 0 24px 60px rgba(15, 23, 32, 0.28);
-      padding: 0;
-      font-family: "Open Sans", Helvetica, sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 1.5;
-      letter-spacing: 0;
-      text-transform: none;
-    }
-
-    .accommodation-booking-body {
-      flex: 1 1 auto;
-      min-height: 0;
-      overflow-x: hidden;
-      overflow-y: auto;
-      overscroll-behavior: contain;
-      -webkit-overflow-scrolling: touch;
-      padding: 28px 28px 22px;
-    }
-
-    .accommodation-booking-panel p {
-      margin: 0;
-      letter-spacing: 0;
-      text-transform: none;
-    }
-
-    .accommodation-booking-dialog .accommodation-booking-close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 1;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      min-width: 44px;
-      min-height: 44px;
-      margin: 0;
-      padding: 0;
-      border: 0;
-      border-radius: 12px;
-      background: #ffffff;
-      box-shadow: none;
-      color: #243038;
-      font-family: "Open Sans", Helvetica, sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      line-height: 1;
-      letter-spacing: 0;
-      text-transform: none;
-      white-space: normal;
-      overflow: visible;
-      cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-
-    .accommodation-booking-dialog .accommodation-booking-close svg {
-      display: block;
-      width: 20px;
-      height: 20px;
-    }
-
-    .accommodation-booking-dialog .accommodation-booking-close:hover {
-      background: rgba(36, 48, 56, 0.08);
-      color: #243038;
-    }
-
-    .accommodation-booking-dialog .accommodation-booking-close:focus-visible,
-    .accommodation-booking-dialog a.accommodation-booking-platform:focus-visible {
-      outline: 3px solid #e44c65;
-      outline-offset: 2px;
-    }
-
-    .accommodation-booking-panel p.accommodation-booking-brand {
-      margin: 0 48px 8px 0;
-      color: #e44c65;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      line-height: 1.3;
-      text-transform: uppercase;
-    }
-
-    .accommodation-booking-title {
-      margin: 0 48px 18px 0;
-      color: #1b3a4b;
-      font-family: "Open Sans", Helvetica, sans-serif;
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: 0;
-      line-height: 1.2;
-      text-transform: none;
-    }
-
-    .accommodation-booking-room {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-      margin: 0 0 18px;
-      padding: 12px;
-      border-radius: 14px;
-      background: #f3f5f7;
-    }
-
-    .accommodation-booking-thumb {
-      display: block;
-      width: 72px;
-      height: 72px;
-      flex: 0 0 72px;
-      object-fit: cover;
-      border-radius: 10px;
-      background: #e6eaee;
-    }
-
-    .accommodation-booking-room-copy {
-      min-width: 0;
-      flex: 1 1 auto;
-    }
-
-    .accommodation-booking-room-name {
-      margin: 0 0 4px;
-      color: #1b3a4b;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1.3;
-      overflow-wrap: anywhere;
-    }
-
-    .accommodation-booking-room-summary,
-    .accommodation-booking-lead,
-    .accommodation-booking-note,
-    .accommodation-booking-platform-name,
-    .accommodation-booking-platform-status {
-      overflow-wrap: anywhere;
-    }
-
-    .accommodation-booking-room-summary {
-      margin: 0;
-      color: #5c6770;
-      font-size: 14px;
-      line-height: 1.4;
-    }
-
-    .accommodation-booking-lead {
-      margin: 0 0 12px;
-      color: #243038;
-      font-size: 15px;
-      line-height: 1.45;
-    }
-
-    .accommodation-booking-platforms {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .accommodation-booking-slot {
-      min-width: 0;
-    }
-
-    .accommodation-booking-dialog a.accommodation-booking-platform,
-    .accommodation-booking-dialog button.accommodation-booking-platform {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      box-sizing: border-box;
-      width: 100%;
-      min-height: 64px;
-      height: auto;
-      margin: 0;
-      padding: 14px 16px;
-      border-radius: 12px;
-      border-bottom: 0;
-      box-shadow: none;
-      font-family: "Open Sans", Helvetica, sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 0;
-      line-height: 1.3;
-      text-align: left;
-      text-decoration: none;
-      text-transform: none;
-      white-space: normal;
-      overflow: visible;
-      cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-
-    .accommodation-booking-platform-copy {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      min-width: 0;
-    }
-
-    .accommodation-booking-platform-name,
-    .accommodation-booking-platform-status {
-      display: block;
-    }
-
-    .accommodation-booking-platform-status {
-      margin-top: 2px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0;
-      text-transform: none;
-    }
-
-    .accommodation-booking-external {
-      display: block;
-      width: 18px;
-      height: 18px;
-      flex: 0 0 18px;
-    }
-
-    .accommodation-booking-dialog a.accommodation-booking-platform {
-      transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
-    }
-
-    .accommodation-booking-dialog a.accommodation-booking-platform--booking,
-    .accommodation-booking-dialog a.accommodation-booking-platform--agoda {
-      background: #ffffff;
-      border: 1px solid #d5dbe3;
-      color: #1c2430;
-    }
-
-    .accommodation-booking-dialog a.accommodation-booking-platform:hover,
-    .accommodation-booking-dialog a.accommodation-booking-platform:focus {
-      background: #00275f;
-      border-color: #00275f;
-      color: #ffffff;
-    }
-
-    .accommodation-booking-dialog button.accommodation-booking-platform--booking:disabled {
-      opacity: 1;
-      pointer-events: auto;
-      cursor: not-allowed;
-      background: #e7eef6;
-      border: 1px solid #c9d5e4;
-      color: #3d4d63;
-      box-shadow: none;
-    }
-
-    .accommodation-booking-dialog button.accommodation-booking-platform--agoda:disabled {
-      opacity: 1;
-      pointer-events: auto;
-      cursor: not-allowed;
-      background: #f6f7f8;
-      border: 1px solid #e3e6eb;
-      color: #5e6874;
-      box-shadow: none;
-    }
-
-    .accommodation-booking-note {
-      margin: 14px 0 0;
-      color: #6d7680;
-      font-size: 13px;
-      line-height: 1.45;
-      text-align: center;
-    }
-
-    .accommodation-booking-sr {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    @media (max-width: 480px) {
-      .accommodation-booking-panel {
-        border-radius: 18px;
-      }
-
-      .accommodation-booking-body {
-        padding: 22px 16px 16px;
-      }
-
-      .accommodation-booking-title {
-        font-size: 24px;
-      }
-    }
-
-    @media (max-height: 520px) {
-      dialog.accommodation-booking-dialog[open] {
-        align-items: flex-start;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      dialog.accommodation-booking-dialog[open] .accommodation-booking-panel,
-      dialog.accommodation-booking-dialog[open]::backdrop {
-        animation: none;
-      }
-
-      .accommodation-booking-dialog a.accommodation-booking-platform {
-        transition: none;
-      }
-    }
-  </style>
+  <section id="booking" class="accommodation-contact">
+    <div class="accommodation-wrap">
+      <h2>Questions before your stay?</h2>
+      <p>Rooms are limited during peak swell season, so it's best to reach out early. Book online via Agoda or message us directly to check availability and rates.</p>
+      <div class="accommodation-contact-actions">
+        <a href="mailto:tangbosurfhouse@gmail.com" class="accommodation-contact-link">Email Us</a>
+        <a href="https://www.instagram.com/tangbosurfhouse" target="_blank" rel="noopener noreferrer" class="accommodation-contact-link">Message on Instagram</a>
+      </div>
+    </div>
+  </section>
 
   <dialog id="accommodation-booking-dialog" class="accommodation-booking-dialog" tabindex="-1" aria-modal="true" aria-labelledby="accommodation-booking-title" aria-describedby="accommodation-booking-name accommodation-booking-summary accommodation-booking-lead accommodation-booking-note">
     <div class="accommodation-booking-panel">
@@ -591,21 +204,21 @@ title: Accommodation
         </svg>
       </button>
       <div class="accommodation-booking-body">
-      <p class="accommodation-booking-brand">Tangbo Surf House</p>
-      <h2 id="accommodation-booking-title" class="accommodation-booking-title">Book your stay</h2>
-      <div class="accommodation-booking-room">
-        <img id="accommodation-booking-image" class="accommodation-booking-thumb" alt="" width="72" height="72">
-        <div class="accommodation-booking-room-copy">
-          <p id="accommodation-booking-name" class="accommodation-booking-room-name"></p>
-          <p id="accommodation-booking-summary" class="accommodation-booking-room-summary"></p>
+        <p class="accommodation-booking-brand">TANGBO SURF HOUSE</p>
+        <h2 id="accommodation-booking-title" class="accommodation-booking-title">Book your stay</h2>
+        <div class="accommodation-booking-room">
+          <img id="accommodation-booking-image" class="accommodation-booking-thumb" alt="" width="72" height="72">
+          <div class="accommodation-booking-room-copy">
+            <p id="accommodation-booking-name" class="accommodation-booking-room-name"></p>
+            <p id="accommodation-booking-summary" class="accommodation-booking-room-summary"></p>
+          </div>
         </div>
-      </div>
-      <p id="accommodation-booking-lead" class="accommodation-booking-lead">Choose where you'd like to book.</p>
-      <div class="accommodation-booking-platforms">
-        <div id="accommodation-booking-slot-booking" class="accommodation-booking-slot"></div>
-        <div id="accommodation-booking-slot-agoda" class="accommodation-booking-slot"></div>
-      </div>
-      <p id="accommodation-booking-note" class="accommodation-booking-note">You'll complete your reservation on your chosen website.</p>
+        <p id="accommodation-booking-lead" class="accommodation-booking-lead">Choose where you'd like to book.</p>
+        <div class="accommodation-booking-platforms">
+          <div id="accommodation-booking-slot-booking" class="accommodation-booking-slot"></div>
+          <div id="accommodation-booking-slot-agoda" class="accommodation-booking-slot"></div>
+        </div>
+        <p id="accommodation-booking-note" class="accommodation-booking-note">Complete your reservation on your chosen website.</p>
       </div>
     </div>
   </dialog>
@@ -619,22 +232,22 @@ title: Accommodation
         name: "Shared Dorm",
         image: "images/dorm.png",
         summary: "Shared dorm · Separate shower and toilet",
-        bookingComUrl: "https://www.booking.com", // PASTE SHARED DORM BOOKING.COM LINK HERE
-        agodaUrl: "https://www.agoda.com"         // PASTE SHARED DORM AGODA LINK HERE
+        bookingComUrl: "https://www.booking.com/hotel/ph/tangbosurfhouse.en-gb.html?aid=304142&label=mkt123sc-d4024ae8-d31d-4cd7-94bf-0f13c076d5f1&sid=2ef4b75cb9d3db0ff5bc6cc088c78665&all_sr_blocks=1520278801_423697117_2_0_0&checkin=2026-11-01&checkout=2026-11-30&dest_id=-2407698&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1520278801_423697117_2_0_0&hpos=1&matching_block_id=1520278801_423697117_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1520278801_423697117_2_0_0__5916000&srepoch=1792028568&srpvid=3d2e0c0a3b37074c&type=total&ucfs=1#availability_target", // PASTE SHARED DORM BOOKING.COM LINK HERE
+        agodaUrl: "https://www.agoda.com/en-gb/accom/property?propertyId=81375700&countryId=70&finalPriceView=1&isShowMobileAppPrice=false&cid=-42&numberOfBedrooms=&familyMode=false&adults=1&children=0&rooms=1&maxRooms=0&checkIn=2026-11-1&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=0&showReviewSubmissionEntry=false&currencyCode=PHP&isFreeOccSearch=false&flightSearchCriteria=[object%20Object]&tspTypes=16&los=29&searchrequestid=13bcf813-4fb0-4b21-bda1-7bd1fb4a41ca#:~:text=See%20nearby%20places-,Select%20your%20room,-We%20price%20match"         // PASTE SHARED DORM AGODA LINK HERE
       },
       "private-room-1": {
         name: "Private Room 1",
         image: "images/room1.png",
         summary: "Queen bed · Private bathroom",
-        bookingComUrl: "https://www.booking.com", // PASTE PRIVATE ROOM 1 BOOKING.COM LINK HERE
-        agodaUrl: "https://www.agoda.com"         // PASTE PRIVATE ROOM 1 AGODA LINK HERE
+        bookingComUrl: "https://www.booking.com/hotel/ph/tangbosurfhouse.en-gb.html?aid=304142&label=mkt123sc-d4024ae8-d31d-4cd7-94bf-0f13c076d5f1&sid=2ef4b75cb9d3db0ff5bc6cc088c78665&all_sr_blocks=1520278801_423697117_2_0_0&checkin=2026-11-01&checkout=2026-11-30&dest_id=-2407698&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1520278801_423697117_2_0_0&hpos=1&matching_block_id=1520278801_423697117_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1520278801_423697117_2_0_0__5916000&srepoch=1792028568&srpvid=3d2e0c0a3b37074c&type=total&ucfs=1#availability_target", // PASTE SHARED DORM BOOKING.COM LINK HERE
+        agodaUrl: "https://www.agoda.com/en-gb/accom/property?propertyId=81375700&countryId=70&finalPriceView=1&isShowMobileAppPrice=false&cid=-42&numberOfBedrooms=&familyMode=false&adults=1&children=0&rooms=1&maxRooms=0&checkIn=2026-11-1&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=0&showReviewSubmissionEntry=false&currencyCode=PHP&isFreeOccSearch=false&flightSearchCriteria=[object%20Object]&tspTypes=16&los=29&searchrequestid=13bcf813-4fb0-4b21-bda1-7bd1fb4a41ca#:~:text=See%20nearby%20places-,Select%20your%20room,-We%20price%20match"         // PASTE PRIVATE ROOM 1 AGODA LINK HERE
       },
       "private-room-2": {
         name: "Private Room 2",
         image: "images/room2.png",
         summary: "Queen bed · Private bathroom",
-        bookingComUrl: "https://www.booking.com", // PASTE PRIVATE ROOM 2 BOOKING.COM LINK HERE
-        agodaUrl: "https://www.agoda.com"         // PASTE PRIVATE ROOM 2 AGODA LINK HERE
+        bookingComUrl: "https://www.booking.com/hotel/ph/tangbosurfhouse.en-gb.html?aid=304142&label=mkt123sc-d4024ae8-d31d-4cd7-94bf-0f13c076d5f1&sid=2ef4b75cb9d3db0ff5bc6cc088c78665&all_sr_blocks=1520278801_423697117_2_0_0&checkin=2026-11-01&checkout=2026-11-30&dest_id=-2407698&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1520278801_423697117_2_0_0&hpos=1&matching_block_id=1520278801_423697117_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1520278801_423697117_2_0_0__5916000&srepoch=1792028568&srpvid=3d2e0c0a3b37074c&type=total&ucfs=1#availability_target", // PASTE SHARED DORM BOOKING.COM LINK HERE
+        agodaUrl: "https://www.agoda.com/en-gb/accom/property?propertyId=81375700&countryId=70&finalPriceView=1&isShowMobileAppPrice=false&cid=-42&numberOfBedrooms=&familyMode=false&adults=1&children=0&rooms=1&maxRooms=0&checkIn=2026-11-1&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=0&showReviewSubmissionEntry=false&currencyCode=PHP&isFreeOccSearch=false&flightSearchCriteria=[object%20Object]&tspTypes=16&los=29&searchrequestid=13bcf813-4fb0-4b21-bda1-7bd1fb4a41ca#:~:text=See%20nearby%20places-,Select%20your%20room,-We%20price%20match"         // PASTE PRIVATE ROOM 2 AGODA LINK HERE
       }
     };
 
@@ -768,7 +381,7 @@ title: Accommodation
         summaryEl.textContent = typeof room.summary === "string" ? room.summary : "";
         setImage(room.image, nameEl.textContent);
         renderPlatform(bookingSlot, "Booking.com", room.bookingComUrl);
-        renderPlatform(agodaSlot, "Agoda.com", room.agodaUrl);
+        renderPlatform(agodaSlot, "Agoda", room.agodaUrl);
         return true;
       }
 
