@@ -53,8 +53,7 @@ title: Accommodation
 
 
               <ul class="actions" style="margin-top: auto;">
-                <li style="width: 100%;"><a href="#booking" class="button fit primary" style="border-radius: 6px;">Book
-                    Now</a></li>
+                <li style="width: 100%;"><button type="button" class="button fit primary accommodation-booking-trigger" data-room="shared-dorm" aria-haspopup="dialog" aria-controls="accommodation-booking-dialog" style="border-radius: 6px;">Book Now</button></li>
               </ul>
             </div>
           </section>
@@ -92,8 +91,7 @@ title: Accommodation
 
 
               <ul class="actions" style="margin-top: auto;">
-                <li style="width: 100%;"><a href="#booking" class="button fit primary" style="border-radius: 6px;">Book
-                    Now</a></li>
+                <li style="width: 100%;"><button type="button" class="button fit primary accommodation-booking-trigger" data-room="private-room-1" aria-haspopup="dialog" aria-controls="accommodation-booking-dialog" style="border-radius: 6px;">Book Now</button></li>
               </ul>
             </div>
           </section>
@@ -131,8 +129,7 @@ title: Accommodation
 
 
               <ul class="actions" style="margin-top: auto;">
-                <li style="width: 100%;"><a href="#booking" class="button fit primary" style="border-radius: 6px;">Book
-                    Now</a></li>
+                <li style="width: 100%;"><button type="button" class="button fit primary accommodation-booking-trigger" data-room="private-room-2" aria-haspopup="dialog" aria-controls="accommodation-booking-dialog" style="border-radius: 6px;">Book Now</button></li>
               </ul>
             </div>
           </section>
@@ -187,5 +184,788 @@ title: Accommodation
       </ul>
     </div>
   </section>
+
+  <style>
+    .accommodation-booking-trigger {
+      font-family: "Open Sans", Helvetica, sans-serif;
+    }
+
+    .accommodation-booking-trigger:focus-visible {
+      outline: 3px solid #e44c65;
+      outline-offset: -4px;
+    }
+
+    dialog.accommodation-booking-dialog {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      background: transparent;
+      color: #243038;
+      max-width: none;
+      max-height: none;
+    }
+
+    dialog.accommodation-booking-dialog:not([open]) {
+      display: none;
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    dialog.accommodation-booking-dialog[open] {
+      position: fixed;
+      inset: 0;
+      z-index: 100000;
+      display: flex;
+      align-items: center;
+      align-items: safe center;
+      justify-content: center;
+      justify-content: safe center;
+      box-sizing: border-box;
+      width: auto;
+      height: auto;
+      overflow: hidden;
+      overscroll-behavior: none;
+      visibility: visible;
+      pointer-events: auto;
+      padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+      background: transparent;
+    }
+
+    dialog.accommodation-booking-dialog::backdrop {
+      background: rgba(15, 28, 40, 0.62);
+    }
+
+    dialog.accommodation-booking-dialog[open] .accommodation-booking-panel {
+      animation: accommodation-booking-enter 180ms ease;
+    }
+
+    dialog.accommodation-booking-dialog[open]::backdrop {
+      animation: accommodation-booking-fade 180ms ease;
+    }
+
+    @keyframes accommodation-booking-enter {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes accommodation-booking-fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .accommodation-booking-panel {
+      position: relative;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 500px;
+      min-height: 0;
+      max-height: calc(100vh - 32px);
+      max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 32px);
+      overflow: hidden;
+      background: #ffffff;
+      color: #243038;
+      border-radius: 20px;
+      box-shadow: 0 24px 60px rgba(15, 23, 32, 0.28);
+      padding: 0;
+      font-family: "Open Sans", Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .accommodation-booking-body {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      padding: 28px 28px 22px;
+    }
+
+    .accommodation-booking-panel p {
+      margin: 0;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .accommodation-booking-dialog .accommodation-booking-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 12px;
+      background: #ffffff;
+      box-shadow: none;
+      color: #243038;
+      font-family: "Open Sans", Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: none;
+      white-space: normal;
+      overflow: visible;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .accommodation-booking-dialog .accommodation-booking-close svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+
+    .accommodation-booking-dialog .accommodation-booking-close:hover {
+      background: rgba(36, 48, 56, 0.08);
+      color: #243038;
+    }
+
+    .accommodation-booking-dialog .accommodation-booking-close:focus-visible,
+    .accommodation-booking-dialog a.accommodation-booking-platform:focus-visible {
+      outline: 3px solid #e44c65;
+      outline-offset: 2px;
+    }
+
+    .accommodation-booking-panel p.accommodation-booking-brand {
+      margin: 0 48px 8px 0;
+      color: #e44c65;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
+    .accommodation-booking-title {
+      margin: 0 48px 18px 0;
+      color: #1b3a4b;
+      font-family: "Open Sans", Helvetica, sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.2;
+      text-transform: none;
+    }
+
+    .accommodation-booking-room {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+      margin: 0 0 18px;
+      padding: 12px;
+      border-radius: 14px;
+      background: #f3f5f7;
+    }
+
+    .accommodation-booking-thumb {
+      display: block;
+      width: 72px;
+      height: 72px;
+      flex: 0 0 72px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #e6eaee;
+    }
+
+    .accommodation-booking-room-copy {
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+
+    .accommodation-booking-room-name {
+      margin: 0 0 4px;
+      color: #1b3a4b;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+
+    .accommodation-booking-room-summary,
+    .accommodation-booking-lead,
+    .accommodation-booking-note,
+    .accommodation-booking-platform-name,
+    .accommodation-booking-platform-status {
+      overflow-wrap: anywhere;
+    }
+
+    .accommodation-booking-room-summary {
+      margin: 0;
+      color: #5c6770;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .accommodation-booking-lead {
+      margin: 0 0 12px;
+      color: #243038;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .accommodation-booking-platforms {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .accommodation-booking-slot {
+      min-width: 0;
+    }
+
+    .accommodation-booking-dialog a.accommodation-booking-platform,
+    .accommodation-booking-dialog button.accommodation-booking-platform {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 64px;
+      height: auto;
+      margin: 0;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border-bottom: 0;
+      box-shadow: none;
+      font-family: "Open Sans", Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.3;
+      text-align: left;
+      text-decoration: none;
+      text-transform: none;
+      white-space: normal;
+      overflow: visible;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .accommodation-booking-platform-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+    }
+
+    .accommodation-booking-platform-name,
+    .accommodation-booking-platform-status {
+      display: block;
+    }
+
+    .accommodation-booking-platform-status {
+      margin-top: 2px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .accommodation-booking-external {
+      display: block;
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+    }
+
+    .accommodation-booking-dialog a.accommodation-booking-platform {
+      transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+
+    .accommodation-booking-dialog a.accommodation-booking-platform--booking,
+    .accommodation-booking-dialog a.accommodation-booking-platform--agoda {
+      background: #ffffff;
+      border: 1px solid #d5dbe3;
+      color: #1c2430;
+    }
+
+    .accommodation-booking-dialog a.accommodation-booking-platform:hover,
+    .accommodation-booking-dialog a.accommodation-booking-platform:focus {
+      background: #00275f;
+      border-color: #00275f;
+      color: #ffffff;
+    }
+
+    .accommodation-booking-dialog button.accommodation-booking-platform--booking:disabled {
+      opacity: 1;
+      pointer-events: auto;
+      cursor: not-allowed;
+      background: #e7eef6;
+      border: 1px solid #c9d5e4;
+      color: #3d4d63;
+      box-shadow: none;
+    }
+
+    .accommodation-booking-dialog button.accommodation-booking-platform--agoda:disabled {
+      opacity: 1;
+      pointer-events: auto;
+      cursor: not-allowed;
+      background: #f6f7f8;
+      border: 1px solid #e3e6eb;
+      color: #5e6874;
+      box-shadow: none;
+    }
+
+    .accommodation-booking-note {
+      margin: 14px 0 0;
+      color: #6d7680;
+      font-size: 13px;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .accommodation-booking-sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 480px) {
+      .accommodation-booking-panel {
+        border-radius: 18px;
+      }
+
+      .accommodation-booking-body {
+        padding: 22px 16px 16px;
+      }
+
+      .accommodation-booking-title {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-height: 520px) {
+      dialog.accommodation-booking-dialog[open] {
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      dialog.accommodation-booking-dialog[open] .accommodation-booking-panel,
+      dialog.accommodation-booking-dialog[open]::backdrop {
+        animation: none;
+      }
+
+      .accommodation-booking-dialog a.accommodation-booking-platform {
+        transition: none;
+      }
+    }
+  </style>
+
+  <dialog id="accommodation-booking-dialog" class="accommodation-booking-dialog" tabindex="-1" aria-modal="true" aria-labelledby="accommodation-booking-title" aria-describedby="accommodation-booking-name accommodation-booking-summary accommodation-booking-lead accommodation-booking-note">
+    <div class="accommodation-booking-panel">
+      <button type="button" class="accommodation-booking-close" id="accommodation-booking-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      <div class="accommodation-booking-body">
+      <p class="accommodation-booking-brand">Tangbo Surf House</p>
+      <h2 id="accommodation-booking-title" class="accommodation-booking-title">Book your stay</h2>
+      <div class="accommodation-booking-room">
+        <img id="accommodation-booking-image" class="accommodation-booking-thumb" alt="" width="72" height="72">
+        <div class="accommodation-booking-room-copy">
+          <p id="accommodation-booking-name" class="accommodation-booking-room-name"></p>
+          <p id="accommodation-booking-summary" class="accommodation-booking-room-summary"></p>
+        </div>
+      </div>
+      <p id="accommodation-booking-lead" class="accommodation-booking-lead">Choose where you'd like to book.</p>
+      <div class="accommodation-booking-platforms">
+        <div id="accommodation-booking-slot-booking" class="accommodation-booking-slot"></div>
+        <div id="accommodation-booking-slot-agoda" class="accommodation-booking-slot"></div>
+      </div>
+      <p id="accommodation-booking-note" class="accommodation-booking-note">You'll complete your reservation on your chosen website.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    // ROOM BOOKING LINKS
+    // Paste each room's full https:// booking URL between the empty quotes.
+    // Leave a URL empty to keep that platform disabled for that room.
+    const roomBookingConfig = {
+      "shared-dorm": {
+        name: "Shared Dorm",
+        image: "images/dorm.png",
+        summary: "Shared dorm · Separate shower and toilet",
+        bookingComUrl: "https://www.booking.com", // PASTE SHARED DORM BOOKING.COM LINK HERE
+        agodaUrl: "https://www.agoda.com"         // PASTE SHARED DORM AGODA LINK HERE
+      },
+      "private-room-1": {
+        name: "Private Room 1",
+        image: "images/room1.png",
+        summary: "Queen bed · Private bathroom",
+        bookingComUrl: "https://www.booking.com", // PASTE PRIVATE ROOM 1 BOOKING.COM LINK HERE
+        agodaUrl: "https://www.agoda.com"         // PASTE PRIVATE ROOM 1 AGODA LINK HERE
+      },
+      "private-room-2": {
+        name: "Private Room 2",
+        image: "images/room2.png",
+        summary: "Queen bed · Private bathroom",
+        bookingComUrl: "https://www.booking.com", // PASTE PRIVATE ROOM 2 BOOKING.COM LINK HERE
+        agodaUrl: "https://www.agoda.com"         // PASTE PRIVATE ROOM 2 AGODA LINK HERE
+      }
+    };
+
+    (function () {
+      var dialog = document.getElementById("accommodation-booking-dialog");
+      var closeButton = document.getElementById("accommodation-booking-close");
+      var nameEl = document.getElementById("accommodation-booking-name");
+      var summaryEl = document.getElementById("accommodation-booking-summary");
+      var imageEl = document.getElementById("accommodation-booking-image");
+      var bookingSlot = document.getElementById("accommodation-booking-slot-booking");
+      var agodaSlot = document.getElementById("accommodation-booking-slot-agoda");
+      var triggers = document.querySelectorAll(".accommodation-booking-trigger");
+      var opener = null;
+      var closing = false;
+      var scrollX = 0;
+      var scrollY = 0;
+      var savedScrollStyles = null;
+      var backdropDown = false;
+      var modalApi = dialog && typeof dialog.showModal === "function";
+
+      if (!dialog || !closeButton || !nameEl || !summaryEl || !imageEl || !bookingSlot || !agodaSlot) {
+        return;
+      }
+
+      document.body.appendChild(dialog);
+
+      function isHttpsUrl(value) {
+        if (typeof value !== "string") {
+          return "";
+        }
+        var trimmed = value.trim();
+        if (!trimmed || trimmed.length > 2048 || /[\u0000-\u0020\u007f]/.test(trimmed)) {
+          return "";
+        }
+        if (!/^https:\/\//i.test(trimmed)) {
+          return "";
+        }
+        try {
+          var url = new URL(trimmed);
+          if (url.protocol !== "https:" || !url.hostname || url.hostname.indexOf(".") === -1) {
+            return "";
+          }
+          if (url.username || url.password || url.href.indexOf("https://") !== 0) {
+            return "";
+          }
+          return url.href;
+        } catch (error) {
+          return "";
+        }
+      }
+
+      function clearNode(node) {
+        while (node.firstChild) {
+          node.removeChild(node.firstChild);
+        }
+      }
+
+      function makeExternalIcon() {
+        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("viewBox", "0 0 24 24");
+        svg.setAttribute("aria-hidden", "true");
+        svg.setAttribute("focusable", "false");
+        svg.setAttribute("class", "accommodation-booking-external");
+        var arrow = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        arrow.setAttribute("fill", "currentColor");
+        arrow.setAttribute("d", "M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z");
+        var box = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        box.setAttribute("fill", "currentColor");
+        box.setAttribute("d", "M5 5h5v2H7v10h10v-3h2v5H5V5z");
+        svg.appendChild(arrow);
+        svg.appendChild(box);
+        return svg;
+      }
+
+      function renderPlatform(slot, platformName, rawUrl) {
+        clearNode(slot);
+        var href = isHttpsUrl(rawUrl);
+        var tone = platformName === "Booking.com" ? "accommodation-booking-platform--booking" : "accommodation-booking-platform--agoda";
+        var copy = document.createElement("span");
+        var name = document.createElement("span");
+        copy.className = "accommodation-booking-platform-copy";
+        name.className = "accommodation-booking-platform-name";
+        name.textContent = platformName;
+        copy.appendChild(name);
+
+        if (!href) {
+          var disabled = document.createElement("button");
+          var status = document.createElement("span");
+          disabled.type = "button";
+          disabled.disabled = true;
+          disabled.className = "accommodation-booking-platform " + tone;
+          disabled.setAttribute("aria-disabled", "true");
+          status.className = "accommodation-booking-platform-status";
+          status.textContent = "Link coming soon";
+          copy.appendChild(status);
+          disabled.appendChild(copy);
+          slot.appendChild(disabled);
+          return;
+        }
+
+        var link = document.createElement("a");
+        var sr = document.createElement("span");
+        link.className = "accommodation-booking-platform " + tone;
+        link.setAttribute("href", href);
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+        sr.className = "accommodation-booking-sr";
+        sr.textContent = " (opens in a new tab)";
+        copy.appendChild(sr);
+        link.appendChild(copy);
+        link.appendChild(makeExternalIcon());
+        slot.appendChild(link);
+      }
+
+      function setImage(path, label) {
+        imageEl.removeAttribute("src");
+        if (typeof path === "string" && /^images\/[A-Za-z0-9._-]+$/.test(path)) {
+          imageEl.setAttribute("src", path);
+          imageEl.setAttribute("alt", label);
+          return;
+        }
+        imageEl.setAttribute("alt", "");
+      }
+
+      function applyRoom(key) {
+        var room = Object.prototype.hasOwnProperty.call(roomBookingConfig, key) ? roomBookingConfig[key] : null;
+        if (!room) {
+          return false;
+        }
+        nameEl.textContent = typeof room.name === "string" ? room.name : "";
+        summaryEl.textContent = typeof room.summary === "string" ? room.summary : "";
+        setImage(room.image, nameEl.textContent);
+        renderPlatform(bookingSlot, "Booking.com", room.bookingComUrl);
+        renderPlatform(agodaSlot, "Agoda.com", room.agodaUrl);
+        return true;
+      }
+
+      function resetContent() {
+        nameEl.textContent = "";
+        summaryEl.textContent = "";
+        imageEl.removeAttribute("src");
+        imageEl.setAttribute("alt", "");
+        clearNode(bookingSlot);
+        clearNode(agodaSlot);
+      }
+
+      function lockScroll() {
+        scrollX = window.pageXOffset || document.documentElement.scrollLeft || 0;
+        scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+        savedScrollStyles = {
+          htmlOverflow: document.documentElement.style.overflow,
+          bodyOverflow: document.body.style.overflow,
+          bodyPosition: document.body.style.position,
+          bodyTop: document.body.style.top,
+          bodyLeft: document.body.style.left,
+          bodyRight: document.body.style.right,
+          bodyWidth: document.body.style.width
+        };
+        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+        document.body.style.position = "fixed";
+        document.body.style.top = "-" + scrollY + "px";
+        document.body.style.left = "0";
+        document.body.style.right = "0";
+        document.body.style.width = "100%";
+      }
+
+      function unlockScroll() {
+        if (!savedScrollStyles) {
+          return;
+        }
+        document.documentElement.style.overflow = savedScrollStyles.htmlOverflow;
+        document.body.style.overflow = savedScrollStyles.bodyOverflow;
+        document.body.style.position = savedScrollStyles.bodyPosition;
+        document.body.style.top = savedScrollStyles.bodyTop;
+        document.body.style.left = savedScrollStyles.bodyLeft;
+        document.body.style.right = savedScrollStyles.bodyRight;
+        document.body.style.width = savedScrollStyles.bodyWidth;
+        savedScrollStyles = null;
+        window.scrollTo(scrollX, scrollY);
+      }
+
+      function focusWithoutScroll(node) {
+        if (!node || typeof node.focus !== "function") {
+          return;
+        }
+        try {
+          node.focus({ preventScroll: true });
+        } catch (error) {
+          node.focus();
+        }
+      }
+
+      function openFrom(trigger) {
+        if (dialog.open) {
+          return;
+        }
+        if (!applyRoom(trigger.getAttribute("data-room"))) {
+          return;
+        }
+        opener = trigger;
+        lockScroll();
+        if (modalApi) {
+          dialog.showModal();
+        } else {
+          dialog.setAttribute("open", "");
+        }
+        focusWithoutScroll(closeButton);
+      }
+
+      function closeDialog() {
+        if (closing || (!dialog.open && !dialog.hasAttribute("open"))) {
+          return;
+        }
+        closing = true;
+        var returnTarget = opener;
+        opener = null;
+        backdropDown = false;
+        if (typeof dialog.close === "function" && (dialog.open || dialog.hasAttribute("open"))) {
+          dialog.close();
+        } else {
+          dialog.removeAttribute("open");
+        }
+        unlockScroll();
+        resetContent();
+        focusWithoutScroll(returnTarget);
+        closing = false;
+      }
+
+      function focusableItems() {
+        var nodes = dialog.querySelectorAll("a[href], button:not([disabled])");
+        var list = [];
+        var i;
+        for (i = 0; i < nodes.length; i++) {
+          if (!nodes[i].hasAttribute("disabled")) {
+            list.push(nodes[i]);
+          }
+        }
+        return list;
+      }
+
+      function trapFocus(event) {
+        var items = focusableItems();
+        if (!items.length) {
+          event.preventDefault();
+          focusWithoutScroll(dialog);
+          return;
+        }
+        var first = items[0];
+        var last = items[items.length - 1];
+        var active = document.activeElement;
+        if (event.shiftKey && (active === first || active === dialog || !dialog.contains(active))) {
+          event.preventDefault();
+          focusWithoutScroll(last);
+          return;
+        }
+        if (!event.shiftKey && (active === last || !dialog.contains(active))) {
+          event.preventDefault();
+          focusWithoutScroll(first);
+        }
+      }
+
+      var triggerIndex;
+      for (triggerIndex = 0; triggerIndex < triggers.length; triggerIndex++) {
+        triggers[triggerIndex].addEventListener("click", function (event) {
+          event.preventDefault();
+          openFrom(event.currentTarget);
+        });
+      }
+
+      closeButton.addEventListener("click", function () {
+        closeDialog();
+      });
+
+      dialog.addEventListener("cancel", function (event) {
+        event.preventDefault();
+        closeDialog();
+      });
+
+      function onEscape(event) {
+        if (closing || (!dialog.open && !dialog.hasAttribute("open"))) {
+          return;
+        }
+        if (event.key !== "Escape" && event.key !== "Esc") {
+          return;
+        }
+        event.preventDefault();
+        closeDialog();
+      }
+
+      dialog.addEventListener("keydown", function (event) {
+        if (!dialog.open && !dialog.hasAttribute("open")) {
+          return;
+        }
+        if (event.key === "Tab") {
+          trapFocus(event);
+        }
+      });
+
+      document.addEventListener("keydown", onEscape, true);
+
+      document.addEventListener("focusin", function (event) {
+        if (closing || !dialog.open) {
+          return;
+        }
+        if (event.target === dialog || dialog.contains(event.target)) {
+          return;
+        }
+        focusWithoutScroll(closeButton);
+      });
+
+      dialog.addEventListener("pointerdown", function (event) {
+        if ((!dialog.open && !dialog.hasAttribute("open")) || event.button !== 0) {
+          backdropDown = false;
+          return;
+        }
+        backdropDown = event.target === dialog;
+      });
+
+      window.addEventListener("pointerup", function (event) {
+        var dismiss = backdropDown && event.target === dialog;
+        backdropDown = false;
+        if (dismiss) {
+          closeDialog();
+        }
+      });
+
+      window.addEventListener("pointercancel", function () {
+        backdropDown = false;
+      });
+    })();
+  </script>
 
 </article>
