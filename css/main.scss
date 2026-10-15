@@ -71,8 +71,8 @@ $baseurl: '{{ site.baseurl }}/images';
 		}
 
 		@include breakpoint(small) {
-			font-size: 11pt;
-			letter-spacing: _size(letter-spacing) * 0.5;
+			font-size: 1rem;
+			letter-spacing: 0.01em;
 		}
 	}
 	
@@ -1442,7 +1442,8 @@ $baseurl: '{{ site.baseurl }}/images';
 				display: none;
 			}
 
-			@include breakpoint(small) {
+			// Switch before the full navigation collides with the site title.
+			@media screen and (max-width: 1365px) {
 				.nav-links {
 					display: none;
 				}
@@ -2518,7 +2519,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
 .location-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 2em;
   margin-top: 1.5em;
 
@@ -2554,5 +2555,187 @@ $baseurl: '{{ site.baseurl }}/images';
 @include breakpoint(small) {
   .location-map-wrapper iframe {
     height: 350px;
+  }
+}
+
+/* Mobile reading space: outer sections own the gutter, not every nested block. */
+@include breakpoint(small) {
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.06em;
+    line-height: 1.35;
+    overflow-wrap: break-word;
+  }
+
+  .wrapper {
+    padding: 3rem 1.25rem;
+
+    > .inner.full-bleed {
+      padding: 0;
+    }
+  }
+
+  .button {
+    height: auto;
+    min-height: 48px;
+    padding: 0.8rem 1rem;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  #header h1 {
+    left: 1.25rem;
+    max-width: calc(100% - 5.5rem);
+    letter-spacing: 0.12em;
+  }
+
+  #header nav {
+    right: 0.5rem;
+
+    > ul > li > a.menuToggle {
+      width: 48px;
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  #header .menuToggle:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: -6px;
+  }
+
+  #menu ul > li > a {
+    height: auto;
+    min-height: 44px;
+    padding: 0.75rem 0;
+    line-height: 1.4;
+    letter-spacing: 0.06em;
+    white-space: normal;
+  }
+
+  #banner {
+    padding: 7rem 1.25rem 6.5rem;
+
+    .inner {
+      width: 100%;
+    }
+
+    h2 {
+      padding: 0.35em 0;
+      font-size: clamp(1.5rem, 6vw, 2rem);
+      line-height: 1.35;
+      letter-spacing: 0.06em;
+      text-wrap: balance;
+    }
+
+    p {
+      letter-spacing: 0.02em;
+      text-transform: none;
+    }
+  }
+
+  .video-controls {
+    right: 1.25rem;
+    bottom: 1.25rem;
+    gap: 0.75rem;
+
+    .ctrl-btn {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  .spotlight .content {
+    padding: 2rem 1.25rem;
+  }
+
+  .story-intro.full-width {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .about-showcase {
+    padding: 0;
+    gap: 1.5rem;
+
+    .showcase-row {
+      .showcase-text {
+        padding: 1.25rem;
+      }
+
+      .showcase-img {
+        min-height: 0;
+        height: auto;
+        aspect-ratio: 4 / 3;
+      }
+    }
+  }
+
+  #two .crew-spotlight {
+    padding: 0;
+  }
+
+  .crew-photo .crew-photo-frame img {
+    height: clamp(240px, 90vw, 400px);
+  }
+
+  .crew-photo .crew-nav {
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+  }
+
+  #instructors {
+    padding: 3rem 1.25rem;
+  }
+
+  .instructor-grid {
+    padding: 0;
+  }
+
+  .instructor-card .instructor-social {
+    min-height: 44px;
+  }
+
+  .location-grid {
+    gap: 1.25rem;
+
+    .location-card {
+      min-width: 0;
+      padding: 1.25rem;
+
+      h3 {
+        align-items: flex-start;
+        line-height: 1.4;
+
+        i {
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+
+  .location-actions {
+    flex-direction: column;
+
+    .button {
+      width: 100%;
+      justify-content: center;
+      letter-spacing: 0.04em;
+    }
+  }
+
+  #footer {
+    padding: 3rem 1.25rem;
+
+    .icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+    }
   }
 }

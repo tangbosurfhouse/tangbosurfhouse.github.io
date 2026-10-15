@@ -467,7 +467,15 @@
 
 @media (max-width: 680px) {
   #main.accommodation-page .accommodation-wrap {
-    width: min(72rem, calc(100% - 1.5rem));
+    width: min(72rem, calc(100% - 2.5rem));
+  }
+
+  #main.accommodation-page .accommodation-currency {
+    font-size: 1rem;
+  }
+
+  #main.accommodation-page .accommodation-card-text {
+    font-size: 1rem;
   }
 
   #main.accommodation-page .accommodation-room-grid {
